@@ -1,20 +1,97 @@
 #!/usr/bin/env python3
 """Validate every preset in presets/ and regenerate index.xml.
 
+A preset (.elpreset) is a copy of physicstasks.xml, with an optional comment at the top:
+  <!-- EuphoriaLab preset
+  name: My shots
+  author: matt..
+  description: ...
+  modVersion: 1.5.0
+  -->
+Old-format presets (<EuphoriaLabPreset> with <PhysicsSets>) are still listed.
+
 Run from the repo root:  python tools/build_index.py
 Exit code 1 if any preset is invalid (the GitHub Action then fails and nothing is published).
 """
-import os, sys, subprocess, datetime
+import os, re, sys, subprocess, datetime
 import xml.etree.ElementTree as ET
 from xml.sax.saxutils import escape
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PRESETS = os.path.join(ROOT, "presets")
+
 MAX_BYTES = 2 * 1024 * 1024
-PARAM_TYPES = {"Bool", "Int", "Float", "Vector", "String"}
-NM_PARAM_TYPES = {"CNmParameterBool", "CNmParameterInt", "CNmParameterFloat", "CNmParameterVector",
-                  "CNmParameterString", "CNmParameterRandomFloat", "CNmParameterRandomInt",
-                  "CNmParameterResetMessage"}
+
+
+class PresetError(Exception):
+    pass
+
+
+def _meta_comment(text):
+    """name/author/description/modVersion from the '<!-- EuphoriaLab preset ... -->' comment."""
+    meta = {}
+    m = re.search(r"<!--(.*?)-->", text, re.S)
+    if m and "euphorialab preset" in m.group(1).lower():
+        for line in m.group(1).splitlines():
+            if ":" in line:
+                k, v = line.split(":", 1)
+                meta[k.strip().lower()] = v.strip()
+    return meta
+
+
+def _clip(v, limit):
+    v = (v or "").strip()
+    return v[:limit]
+
+
+def parse_preset(data, filename="preset.elpreset", fallback_author="", allow_legacy=False):
+    """Validate an .elpreset (a copy of physicstasks.xml). Returns metadata or raises PresetError."""
+    if len(data) > MAX_BYTES:
+        raise PresetError(f"file is larger than {MAX_BYTES // (1024 * 1024)} MB")
+    if b"<!DOCTYPE" in data or b"<!ENTITY" in data:
+        raise PresetError("DOCTYPE / ENTITY declarations are not allowed")
+    try:
+        root = ET.fromstring(data)
+    except ET.ParseError as ex:
+        raise PresetError(f"not valid XML ({ex})")
+    text = data.decode("utf-8", "replace")
+    if root.tag == "EuphoriaLabPreset" and allow_legacy:
+        sets = root.find("PhysicsSets")
+        if sets is None:
+            raise PresetError("old-format preset without <PhysicsSets>")
+        return {"name": _clip(root.findtext("Name"), 60) or "preset", "author": _clip(root.findtext("Author"), 40) or "unknown",
+                "description": _clip(root.findtext("Description"), 300), "modVersion": _clip(root.findtext("ModVersion"), 20),
+                "tags": "physics", "type": "physics", "count": len(sets.findall("Set"))}
+    if root.tag != "CTuningFile":
+        raise PresetError("a preset must be a copy of physicstasks.xml (root <CTuningFile>) - export it again from Euphoria Lab")
+    tunables = root.find("Tunables")
+    if tunables is None or not [i for i in tunables.findall("Item") if (i.get("type") or "").endswith("__Tunables")]:
+        raise PresetError("no <Tunables> items - is this really physicstasks.xml?")
+    filled = 0
+    for task in tunables.findall("Item"):
+        for s in task.iter("Messages"):
+            items = s.findall("Item")
+            for m in items:
+                if m.get("type") != "CNmMessage" or not (m.findtext("Name") or "").strip():
+                    raise PresetError("bad NM message (needs type CNmMessage and a <Name>)")
+                params = m.find("Params")
+                for p in (params if params is not None else []):
+                    if not (p.get("type") or "").startswith("CNmParameter"):
+                        raise PresetError(f"unknown parameter type {p.get('type')}")
+            if items:
+                filled += 1
+    meta = _meta_comment(text)
+    stem = re.sub(r"\.elpreset$", "", filename, flags=re.I)
+    return {"name": _clip(meta.get("name") or stem.replace("_", " "), 60) or "preset",
+            "author": _clip(meta.get("author") or fallback_author, 40) or "unknown",
+            "description": _clip(meta.get("description"), 300),
+            "modVersion": _clip(meta.get("modversion"), 20),
+            "tags": "physics", "type": "physics", "count": filled}
+
+
+def safe_name(s):
+    s = re.sub(r"[^A-Za-z0-9_-]+", "_", s).strip("_")
+    return (s or "preset")[:60]
 
 
 def git_date(path):
@@ -27,65 +104,6 @@ def git_date(path):
     return datetime.datetime.fromtimestamp(os.path.getmtime(path), datetime.timezone.utc).replace(microsecond=0, tzinfo=None).isoformat() + "Z"
 
 
-def text(el, tag, required=True, limit=300):
-    v = (el.findtext(tag) or "").strip()
-    if required and not v:
-        raise ValueError(f"missing <{tag}>")
-    if len(v) > limit:
-        raise ValueError(f"<{tag}> is longer than {limit} characters")
-    return v
-
-
-def validate(path):
-    if os.path.getsize(path) > MAX_BYTES:
-        raise ValueError(f"file is larger than {MAX_BYTES // 1024} KB")
-    root = ET.parse(path).getroot()
-    if root.tag != "EuphoriaLabPreset":
-        raise ValueError("root element must be <EuphoriaLabPreset>")
-    if root.get("format") != "1":
-        raise ValueError('format must be "1"')
-    meta = {
-        "name": text(root, "Name", limit=60),
-        "author": text(root, "Author", limit=40),
-        "description": text(root, "Description", required=False, limit=300),
-        "modVersion": text(root, "ModVersion", required=False, limit=20),
-        "tags": text(root, "Tags", required=False, limit=120),
-    }
-    stack, sets = root.find("Stack"), root.find("PhysicsSets")
-    if (stack is None) == (sets is None):
-        raise ValueError("a preset needs exactly one of <Stack> or <PhysicsSets>")
-    if stack is not None:
-        entries = stack.findall("Entry")
-        if not entries:
-            raise ValueError("<Stack> has no <Entry>")
-        for e in entries:
-            if not e.get("behavior"):
-                raise ValueError("<Entry> without behavior")
-            int(e.get("delay", "0"))
-            for p in e.findall("Param"):
-                if p.get("type") not in PARAM_TYPES or not p.get("name") or p.get("value") is None:
-                    raise ValueError(f"bad <Param> in {e.get('behavior')}")
-        meta["type"], meta["count"] = "stack", len(entries)
-    else:
-        all_sets = sets.findall("Set")
-        if not all_sets:
-            raise ValueError("<PhysicsSets> has no <Set>")
-        for s in all_sets:
-            if not s.get("task") or not s.get("label"):
-                raise ValueError("<Set> needs task and label")
-            msgs = s.find("Messages")
-            if msgs is None:
-                raise ValueError(f"set {s.get('label')} has no <Messages>")
-            for m in msgs.findall("Item"):
-                if m.get("type") != "CNmMessage" or not (m.findtext("Name") or "").strip():
-                    raise ValueError(f"bad message in set {s.get('label')}")
-                for p in m.find("Params") if m.find("Params") is not None else []:
-                    if p.get("type") not in NM_PARAM_TYPES:
-                        raise ValueError(f"unknown parameter type {p.get('type')}")
-        meta["type"], meta["count"] = "physics", len(all_sets)
-    return meta
-
-
 def main():
     entries, errors = [], []
     for dirpath, _, files in os.walk(PRESETS):
@@ -95,7 +113,8 @@ def main():
             full = os.path.join(dirpath, f)
             rel = os.path.relpath(full, ROOT).replace(os.sep, "/")
             try:
-                meta = validate(full)
+                with open(full, "rb") as fh:
+                    meta = parse_preset(fh.read(), f, "", allow_legacy=True)
             except Exception as ex:
                 errors.append(f"{rel}: {ex}")
                 continue
