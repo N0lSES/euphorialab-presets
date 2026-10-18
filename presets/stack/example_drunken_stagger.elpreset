@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EuphoriaLabPreset format="1">
+  <Name>Drunken stagger</Name>
+  <Author>EuphoriaLab</Author>
+  <Description>Loose, wobbly stagger with flailing arms. Example stack preset.</Description>
+  <ModVersion>1.3.0</ModVersion>
+  <Tags>stack, stagger, example</Tags>
+  <Stack>
+    <Entry behavior="ConfigureBalance" delay="0">
+      <Param name="StepClampScale" type="Float" value="0.6" />
+    </Entry>
+    <Entry behavior="StaggerFall" delay="0">
+      <Param name="ArmStiffness" type="Float" value="6" />
+      <Param name="StaggerStepProb" type="Float" value="0.8" />
+    </Entry>
+    <Entry behavior="ArmsWindmill" delay="500" />
+  </Stack>
+</EuphoriaLabPreset>

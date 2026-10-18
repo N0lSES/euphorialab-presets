@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EuphoriaLabPreset format="1">
+  <Name>Soft Shot_Base</Name>
+  <Author>EuphoriaLab</Author>
+  <Description>Example physics-set preset: a gentle base shot reaction. Replaces CTaskNMShot / Shot_Base.</Description>
+  <ModVersion>1.3.0</ModVersion>
+  <Tags>physics, shot, example</Tags>
+  <PhysicsSets>
+    <Set task="CTaskNMShot" label="Shot_Base" enabled="true" priority="0">
+      <Messages>
+        <Item type="CNmMessage">
+          <Name>shot</Name>
+          <Params>
+            <Item type="CNmParameterBool">
+              <Name>start</Name>
+              <Value value="true" />
+            </Item>
+            <Item type="CNmParameterFloat">
+              <Name>bodyStiffness</Name>
+              <Value value="9.00000000" />
+            </Item>
+          </Params>
+          <ForceNewMessage value="false" />
+          <TaskMessage value="false" />
+        </Item>
+        <Item type="CNmMessage">
+          <Name>staggerFall</Name>
+          <Params>
+            <Item type="CNmParameterBool">
+              <Name>start</Name>
+              <Value value="true" />
+            </Item>
+          </Params>
+          <ForceNewMessage value="false" />
+          <TaskMessage value="false" />
+        </Item>
+      </Messages>
+    </Set>
+  </PhysicsSets>
+</EuphoriaLabPreset>
