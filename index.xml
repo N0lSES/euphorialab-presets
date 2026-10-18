@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<EuphoriaLabIndex format="1" count="1">
+<EuphoriaLabIndex format="1" count="2">
+  <Preset type="physics" file="presets/physics/matt_mAEO_v1_1.elpreset" date="2026-10-18T06:45:40-04:00" modVersion="1.5.0" count="148">
+    <Name>mAEO v1.1</Name>
+    <Author>matt..</Author>
+    <Description></Description>
+    <Tags>physics</Tags>
+  </Preset>
   <Preset type="physics" file="presets/physics/matt_Vanilla.elpreset" date="2026-10-18T03:42:49-04:00" modVersion="1.4.1" count="152">
     <Name>Vanilla</Name>
     <Author>matt..</Author>
