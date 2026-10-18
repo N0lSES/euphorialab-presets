@@ -1,9 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
-<EuphoriaLabIndex format="1" count="1">
-  <Preset type="physics" file="presets/physics/matt_Vanilla.elpreset" date="2026-10-18T03:42:49-04:00" modVersion="1.4.1" count="152">
-    <Name>Vanilla</Name>
-    <Author>matt..</Author>
-    <Description>:)</Description>
-    <Tags>physics</Tags>
-  </Preset>
+<EuphoriaLabIndex format="1" count="0">
 </EuphoriaLabIndex>
