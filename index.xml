@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<EuphoriaLabIndex format="1" count="2">
+<EuphoriaLabIndex format="1" count="1">
   <Preset type="physics" file="presets/physics/matt_My_physics_sets.elpreset" date="2026-10-18T03:28:22-04:00" modVersion="1.4.0" count="1">
     <Name>My physics sets</Name>
     <Author>matt..</Author>
     <Description></Description>
     <Tags>physics</Tags>
-  </Preset>
-  <Preset type="stack" file="presets/stack/example_drunken_stagger.elpreset" date="2026-10-18T01:58:46-04:00" modVersion="1.3.0" count="3">
-    <Name>Drunken stagger</Name>
-    <Author>EuphoriaLab</Author>
-    <Description>Loose, wobbly stagger with flailing arms. Example stack preset.</Description>
-    <Tags>stack, stagger, example</Tags>
   </Preset>
 </EuphoriaLabIndex>
