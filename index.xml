@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<EuphoriaLabIndex format="1" count="0">
+<EuphoriaLabIndex format="1" count="1">
+  <Preset type="physics" file="presets/physics/matt_My_physics_sets.elpreset" date="2026-10-18T07:57:02-04:00" modVersion="1.5.0" count="49">
+    <Name>My physics sets</Name>
+    <Author>matt..</Author>
+    <Description></Description>
+    <Tags>physics</Tags>
+  </Preset>
 </EuphoriaLabIndex>
