@@ -10,7 +10,7 @@ from xml.sax.saxutils import escape
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PRESETS = os.path.join(ROOT, "presets")
-MAX_BYTES = 200 * 1024
+MAX_BYTES = 2 * 1024 * 1024
 PARAM_TYPES = {"Bool", "Int", "Float", "Vector", "String"}
 NM_PARAM_TYPES = {"CNmParameterBool", "CNmParameterInt", "CNmParameterFloat", "CNmParameterVector",
                   "CNmParameterString", "CNmParameterRandomFloat", "CNmParameterRandomInt",
