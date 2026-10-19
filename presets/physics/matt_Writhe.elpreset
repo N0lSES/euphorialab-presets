@@ -1,0 +1,2919 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--EuphoriaLab preset
+name: Writhe
+author: matt..
+description: 
+modVersion: 1.5.0
+-->
+<CTuningFile>
+  <Tunables>
+    <Item type="CGrabHelper__Tunables">
+      <Name>CGrabHelper</Name>
+      <Sets>
+        <sets>
+          <Item key="default">
+            <Id>default</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="GrabVehicleDoor">
+            <Id>GrabVehicleDoor</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="GrabVehicleDoorOnBalanceFailed">
+            <Id>GrabVehicleDoorOnBalanceFailed</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+        </sets>
+      </Sets>
+    </Item>
+    <Item type="CTaskNMControl__Tunables">
+      <Name>CTaskNMControl</Name>
+      <DriveToGetup>
+        <AllowDriveToGetup value="true" />
+        <OnlyAllowForShot value="false" />
+        <AllowWhenBalanced value="true" />
+        <MinHealth value="-1.0" />
+        <MaxSpeed value="10.0" />
+        <MaxUprightRatio value="0.4" />
+        <MatchTimer value="50" />
+      </DriveToGetup>
+      <OnEnableDriveToGetup>
+        <Id>OnEnableDriveToGetup</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnEnableDriveToGetup>
+      <OnDisableDriveToGetup>
+        <Id>OnDisableDriveToGetup</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnDisableDriveToGetup>
+    </Item>
+    <Item type="CTaskNMBehaviour__Tunables">
+      <Name>CTaskNMBehaviour</Name>
+      <EnableRagdollPooling value="true" />
+      <MaxGameplayNmAgents value="8" />
+      <MaxRageRagdolls value="8" />
+      <ReserveLocalPlayerNmAgent value="true" />
+      <EnableRagdollPoolingMp value="true" />
+      <MaxGameplayNmAgentsMp value="3" />
+      <MaxRageRagdollsMp value="3" />
+      <ReserveLocalPlayerNmAgentMp value="true" />
+      <BlockOffscreenShotReactions value="false" />
+      <UsePreEmptiveEdgeActivation value="true" />
+      <UsePreEmptiveEdgeActivationMp value="false" />
+      <UseBalanceForEdgeActivation value="false" />
+      <PreEmptiveEdgeActivationMaxVel value="50.0" />
+      <PreEmptiveEdgeActivationMaxHeadingDiff value="0.5" />
+      <PreEmptiveEdgeActivationMinDotVel value="0.4" />
+      <PreEmptiveEdgeActivationMaxDistance value="1.0" />
+      <PreEmptiveEdgeActivationMinDesiredMBR2 value="1.0" />
+      <StandardBlendOutThresholds>
+        <Ai>
+          <MaxLinearVelocity value="1.0" />
+          <MaxAngularVelocity value="1.0" />
+          <SettledTimeMS value="1000" />
+          <RandomiseSettledTime value="false" />
+          <SettledTimeMinMS value="400" />
+        </Ai>
+        <Player>
+          <MaxLinearVelocity value="1.0" />
+          <MaxAngularVelocity value="1.0" />
+          <SettledTimeMS value="1000" />
+          <RandomiseSettledTime value="false" />
+          <SettledTimeMinMS value="350" />
+        </Player>
+        <PlayerMp>
+          <MaxLinearVelocity value="0.0" />
+          <MaxAngularVelocity value="0.0" />
+          <SettledTimeMS value="0" />
+          <RandomiseSettledTime value="false" />
+          <SettledTimeMinMS value="0" />
+        </PlayerMp>
+      </StandardBlendOutThresholds>
+      <CamAttachPositionWeights>
+        <Item>
+          <Bound>RAGDOLL_NECK</Bound>
+          <Weight value="5.0" />
+        </Item>
+        <Item>
+          <Bound>RAGDOLL_BUTTOCKS</Bound>
+          <Weight value="10.0" />
+        </Item>
+        <Item>
+          <Bound>RAGDOLL_FOOT_LEFT</Bound>
+          <Weight value="1.0" />
+        </Item>
+        <Item>
+          <Bound>RAGDOLL_FOOT_RIGHT</Bound>
+          <Weight value="1.0" />
+        </Item>
+        <Item>
+          <Bound>RAGDOLL_HAND_LEFT</Bound>
+          <Weight value="0.0" />
+        </Item>
+        <Item>
+          <Bound>RAGDOLL_HAND_RIGHT</Bound>
+          <Weight value="0.0" />
+        </Item>
+      </CamAttachPositionWeights>
+      <SpActivationModifiers>
+        <BumpedByCar value="1.0" />
+        <BumpedByCarFriendly value="3.0" />
+        <PlayerBumpedByCar value="4.0" />
+        <MinVehicleWarning value="4.0" />
+        <BumpedByPedMinVel value="0.2" />
+        <BumpedByPedMinDotVel value="0.2" />
+        <BumpedByPed value="7.0" />
+        <BumpedByPlayerRagdoll value="1.0" />
+        <BumpedByPedRagdoll value="4.0" />
+        <BumpedByPedFriendly value="0.5" />
+        <BumpedByPedIsQuadruped value="1.6" />
+        <BumpedByObject value="0.5" />
+        <Walking value="1.0" />
+        <Running value="4.0" />
+        <Sprinting value="4.0" />
+        <MaxPlayerActivationLimit value="350.0" />
+        <MaxAiActivationLimit value="350.0" />
+      </SpActivationModifiers>
+      <MpActivationModifiers>
+        <BumpedByCar value="4.0" />
+        <BumpedByCarFriendly value="1.5" />
+        <PlayerBumpedByCar value="1.0" />
+        <MinVehicleWarning value="1.0" />
+        <BumpedByPedMinVel value="1.5" />
+        <BumpedByPedMinDotVel value="0.6" />
+        <BumpedByPed value="1.0" />
+        <BumpedByPlayerRagdoll value="1.0" />
+        <BumpedByPedRagdoll value="1.0" />
+        <BumpedByPedFriendly value="15.0" />
+        <BumpedByPedIsQuadruped value="1.0" />
+        <BumpedByObject value="1.0" />
+        <Walking value="1.0" />
+        <Running value="7.5" />
+        <Sprinting value="10.0" />
+        <MaxPlayerActivationLimit value="350.0" />
+        <MaxAiActivationLimit value="350.0" />
+      </MpActivationModifiers>
+      <PlayerBumpedByCloneCarActivationModifier value="2.0" />
+      <ClonePlayerBumpedByCarActivationModifier value="2.5" />
+      <ClonePedBumpedByCarActivationModifier value="6.0" />
+      <MaxVehicleCapsulePushTimeForRagdollActivation value="1.0" />
+      <MaxVehicleCapsulePushTimeForPlayerRagdollActivation value="0.5" />
+      <VehicleMinSpeedForContinuousPushActivation value="0.5" />
+      <MinContactDepthForContinuousPushActivation value="-0.005" />
+      <DurationRampDownCapsulePushedByVehicle value="0.3" />
+      <VehicleMinSpeedForAiActivation value="-0.3" />
+      <VehicleMinSpeedForStationaryAiActivation value="-0.3" />
+      <VehicleMinSpeedForPlayerActivation value="0.1" />
+      <VehicleMinSpeedForStationaryPlayerActivation value="0.5" />
+      <VehicleMinSpeedForWarningActivation value="250.0" />
+      <VehicleFallingSpeedWeight value="0.333333" />
+      <VehicleActivationForceMultiplierDefault value="0.023" />
+      <VehicleActivationForceMultiplierBicycle value="0.1" />
+      <VehicleActivationForceMultiplierBike value="0.12" />
+      <VehicleActivationForceMultiplierBoat value="0.023" />
+      <VehicleActivationForceMultiplierPlane value="0.023" />
+      <VehicleActivationForceMultiplierQuadBike value="0.05" />
+      <VehicleActivationForceMultiplierHeli value="0.023" />
+      <VehicleActivationForceMultiplierTrain value="0.023" />
+      <VehicleActivationForceMultiplierRC value="0.25" />
+      <ExcludePedBumpAngleFromPushCalculation value="true" />
+      <PedActivationForceMultiplier value="1.0" />
+      <ObjectMinSpeedForActivation value="0.5" />
+      <ObjectActivationForceMultiplier value="1.0" />
+      <MaxPlayerCapsulePushTimeForRagdollActivation value="350" />
+      <PlayerCapsuleMinSpeedForContinuousPushActivation value="0.05" />
+      <StuckOnVehicleMaxTime value="5.0" />
+      <StuckOnVehicleBlendOutThresholds>
+        <Ai>
+          <MaxLinearVelocity value="0.75" />
+          <MaxAngularVelocity value="1.5" />
+          <SettledTimeMS value="100" />
+          <RandomiseSettledTime value="false" />
+          <SettledTimeMinMS value="50" />
+        </Ai>
+        <Player>
+          <MaxLinearVelocity value="0.75" />
+          <MaxAngularVelocity value="1.5" />
+          <SettledTimeMS value="100" />
+          <RandomiseSettledTime value="false" />
+          <SettledTimeMinMS value="50" />
+        </Player>
+        <PlayerMp>
+          <MaxLinearVelocity value="0.75" />
+          <MaxAngularVelocity value="1.5" />
+          <SettledTimeMS value="100" />
+          <RandomiseSettledTime value="false" />
+          <SettledTimeMinMS value="50" />
+        </PlayerMp>
+      </StuckOnVehicleBlendOutThresholds>
+      <Start>
+        <Id>start</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages>
+          <Item type="CNmMessage">
+            <Name>bodyWrithe</Name>
+            <Params>
+              <Item type="CNmParameterBool">
+                <Name>start</Name>
+                <Value value="true" />
+              </Item>
+            </Params>
+            <ForceNewMessage value="false" />
+            <TaskMessage value="false" />
+          </Item>
+        </Messages>
+      </Start>
+      <TeeterControl>
+        <Id>TeeterControl</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </TeeterControl>
+      <animPoseDefault>
+        <Id>animPoseDefault</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </animPoseDefault>
+      <animPoseAttachDefault>
+        <Id>animPoseAttachDefault</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </animPoseAttachDefault>
+      <animPoseAttachToVehicle>
+        <Id>animPoseAttachToVehicle</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </animPoseAttachToVehicle>
+      <animPoseHandsCuffed>
+        <Id>animPoseHandsCuffed</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </animPoseHandsCuffed>
+      <forceFall>
+        <Id>forceFall</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </forceFall>
+      <RagdollUnderWheelTuning>
+        <fImpulseMultLimbs value="5.0" />
+        <fImpulseMultSpine value="-5.0" />
+        <fMinSpeedForPush value="5.0" />
+        <fFastCarPushImpulseMult value="8.0" />
+      </RagdollUnderWheelTuning>
+      <KickOnGroundTuning>
+        <fPronePedKickImpulse value="50.0" />
+      </KickOnGroundTuning>
+      <CapsuleVehicleHitTuning>
+        <EnableActivationsFromCapsuleImpacts value="true" />
+        <VehicleVelToImpactNormalMinDot value="0.15" />
+        <EnableSideSwipeActivations value="true" />
+        <EnableSideSwipeActivationsFirstPerson value="false" />
+        <MinSideNormalForSideSwipe value="0.8" />
+        <MinVelThroughNormalForSideSwipe value="1.0" />
+        <MinAccumulatedImpactForSideSwipe value="5.0" />
+        <MinVehVelMagForSideSwipe value="1.5" />
+        <MinVehVelMagForBicycleSideSwipe value="6.0" />
+      </CapsuleVehicleHitTuning>
+    </Item>
+    <Item type="CTaskNMBalance__Tunables">
+      <Name>CTaskNMBalance</Name>
+      <InitialBumpComponent>RAGDOLL_SPINE0</InitialBumpComponent>
+      <InitialBumpForce>
+        <Enable value="true" />
+        <Mag value="1.0" />
+        <ScaleWithVelocity value="true" />
+        <VelocityMin value="0.0" />
+        <VelocityMax value="7.0" />
+        <ForceAtMinVelocity value="0.55" />
+        <ForceAtMaxVelocity value="1.0" />
+        <ClampImpulse value="true" />
+        <MinImpulse value="0.0" />
+        <MaxImpulse value="4500.0" />
+        <Delay value="30" />
+        <Duration value="150" />
+        <ScaleWithUpright value="true" />
+      </InitialBumpForce>
+      <InitialBumpOffset x="0.0" y="0.0" z="0.0" />
+      <ScaleStayUprightWithVel value="true" />
+      <StayUprightAtMaxVel value="2.0" />
+      <MaxVel value="2.0" />
+      <StayUprightAtMinVel value="10.0" />
+      <MinVel value="0.25" />
+      <lookAtVelProbIfNoBumpTarget value="0.125" />
+      <fMaxTargetDistToUpdateFlinch value="1.1" />
+      <fMaxTargetDistToUpdateFlinchOnGround value="1.5" />
+      <fFlinchTargetZOffset value="0.4" />
+      <fFlinchTargetZOffsetOnGround value="0.4" />
+      <fMinForwardVectorToFlinch value="0.2" />
+      <fMinForwardVectorToFlinchOnGround value="-1.0" />
+      <fHeadLookZOffset value="0.0" />
+      <fHeadLookZOffsetOnGround value="0.0" />
+      <MaxSteps value="50" />
+      <timeToCatchfallMS value="3000" />
+      <StartWeak>
+        <Id>StartWeak</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </StartWeak>
+      <StartAggressive>
+        <Id>StartAggressive</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </StartAggressive>
+      <StartDefault>
+        <Id>StartDefault</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </StartDefault>
+      <BumpedByPed>
+        <Id>BumpedByPed</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </BumpedByPed>
+      <OnStairs>
+        <Id>OnStairs</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnStairs>
+      <OnSteepSlope>
+        <Id>OnSteepSlope</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnSteepSlope>
+      <OnMovingGround>
+        <Id>OnMovingGround</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnMovingGround>
+      <LostBalanceAndGrabbing>
+        <Id>LostBalanceAndGrabbing</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </LostBalanceAndGrabbing>
+      <Teeter>
+        <Id>teeter</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Teeter>
+      <FallOffAMovingCar>
+        <Id>FallOffAMovingCar</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </FallOffAMovingCar>
+      <RollingFall>
+        <Id>RollingFall</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </RollingFall>
+      <CatchFall>
+        <Id>CatchFall</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </CatchFall>
+      <OnBalanceFailed>
+        <Id>OnBalanceFailed</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnBalanceFailed>
+      <NotBeingPushedDelayMS value="150" />
+      <NotBeingPushedOnGroundDelayMS value="400" />
+      <BeingPushedOnGroundTooLongMS value="1000" />
+      <OnBeingPushed>
+        <Id>OnBeingPushed</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnBeingPushed>
+      <OnBeingPushedOnGround>
+        <Id>OnBeingPushedOnGround</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnBeingPushedOnGround>
+      <OnNotBeingPushed>
+        <Id>OnNotBeingPushed</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnNotBeingPushed>
+      <OnBeingPushedOnGroundTooLong>
+        <Id>OnBeingPushedOnGroundTooLong</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnBeingPushedOnGroundTooLong>
+      <PushedThresholdOnGround>
+        <MaxLinearVelocity value="0.5" />
+        <MaxAngularVelocity value="5.0" />
+        <SettledTimeMS value="0" />
+        <RandomiseSettledTime value="false" />
+        <SettledTimeMinMS value="0" />
+      </PushedThresholdOnGround>
+    </Item>
+    <Item type="CTaskNMBrace__Tunables">
+      <Name>CTaskNMBrace</Name>
+      <VehicleOverrides>
+        <sets>
+          <Item>
+            <Id>Bike</Id>
+            <OverrideInverseMassScales value="true" />
+            <InverseMassScales>
+              <ApplyVehicleScale value="false" />
+              <VehicleScale value="1.5" />
+              <ApplyPedScale value="false" />
+              <PedScale value="1.0" />
+            </InverseMassScales>
+            <OverrideReactionType value="true" />
+            <ForceUnderVehicle value="true" />
+            <ForceOverVehicle value="false" />
+            <VehicleCentreZOffset value="0.0" />
+            <OverrideRootLiftForce value="true" />
+            <RootLiftForce>
+              <Apply value="false" />
+              <ScaleWithVelocity value="false" />
+              <MinVelThreshold value="0.0" />
+              <MaxVelThreshold value="100000.0" />
+              <MinVelMag value="0.0" />
+              <MaxVelMag value="100000.0" />
+              <ScaleWithUpright value="false" />
+              <ScaleWithMass value="false" />
+              <ReduceWithPedVelocity value="false" />
+              <ReduceWithPedAngularVelocity value="false" />
+              <OnlyInContact value="false" />
+              <OnlyNotInContact value="false" />
+              <ForceMag value="10.0" />
+              <MinMag value="0.0" />
+              <MaxMag value="100.0" />
+              <Duration value="200" />
+            </RootLiftForce>
+            <OverrideFlipForce value="true" />
+            <FlipForce>
+              <Apply value="false" />
+              <ScaleWithVelocity value="false" />
+              <MinVelThreshold value="0.0" />
+              <MaxVelThreshold value="100000.0" />
+              <MinVelMag value="0.0" />
+              <MaxVelMag value="100000.0" />
+              <ScaleWithUpright value="false" />
+              <ScaleWithMass value="false" />
+              <ReduceWithPedVelocity value="false" />
+              <ReduceWithPedAngularVelocity value="false" />
+              <OnlyInContact value="true" />
+              <OnlyNotInContact value="false" />
+              <ForceMag value="70.0" />
+              <MinMag value="0.0" />
+              <MaxMag value="4500.0" />
+              <Duration value="200" />
+            </FlipForce>
+            <OverrideInitialForce value="true" />
+            <InitialForce>
+              <VelocityMin value="0.01" />
+              <VelocityMax value="3.0" />
+              <ForceAtMinVelocity value="6000.0" />
+              <ForceAtMaxVelocity value="6000.0" />
+              <ScaleWithUpright value="true" />
+            </InitialForce>
+            <OverrideElasticity value="true" />
+            <VehicleCollisionElasticityMult value="0.01" />
+            <OverrideFriction value="true" />
+            <VehicleCollisionFrictionMult value="1.0" />
+            <LateralForce>
+              <Apply value="false" />
+              <ScaleWithVelocity value="true" />
+              <MinVelThreshold value="5.0" />
+              <MaxVelThreshold value="15.0" />
+              <MinVelMag value="15.0" />
+              <MaxVelMag value="115.0" />
+              <ScaleWithUpright value="true" />
+              <ScaleWithMass value="false" />
+              <ReduceWithPedVelocity value="false" />
+              <ReduceWithPedAngularVelocity value="true" />
+              <OnlyInContact value="false" />
+              <OnlyNotInContact value="false" />
+              <ForceMag value="500.0" />
+              <MinMag value="10.0" />
+              <MaxMag value="550.0" />
+              <Duration value="200" />
+            </LateralForce>
+            <OverrideStuckOnVehicleSets value="true" />
+            <AddToBaseStuckOnVehicleSets value="false" />
+            <StuckOnVehicle>
+              <InitialDelay value="500" />
+              <UnderVehicleInitialDelay value="500" />
+              <VelocityThreshold value="1.0" />
+              <ContinuousContactTime value="0.5" />
+              <UnderVehicleVelocityThreshold value="0.0" />
+              <UnderVehicleContinuousContactTime value="0.1" />
+              <UnderCarMaxVelocity value="1.0" />
+              <StuckOnVehicle>
+                <Id>StuckOnVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckOnVehicle>
+              <EndStuckOnVehicle>
+                <Id>EndStuckOnVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckOnVehicle>
+              <UpdateOnVehicle>
+                <Id>UpdateOnVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </UpdateOnVehicle>
+              <StuckUnderVehicle>
+                <Id>StuckUnderVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckUnderVehicle>
+              <EndStuckUnderVehicle>
+                <Id>EndStuckUnderVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckUnderVehicle>
+              <StuckOnVehiclePlayer>
+                <Id>StuckOnVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckOnVehiclePlayer>
+              <EndStuckOnVehiclePlayer>
+                <Id>EndStuckOnVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="false" />
+                <Messages />
+              </EndStuckOnVehiclePlayer>
+              <UpdateOnVehiclePlayer>
+                <Id>UpdateOnVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="false" />
+                <Messages />
+              </UpdateOnVehiclePlayer>
+              <StuckUnderVehiclePlayer>
+                <Id>StuckUnderVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckUnderVehiclePlayer>
+              <EndStuckUnderVehiclePlayer>
+                <Id>EndStuckUnderVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckUnderVehiclePlayer>
+            </StuckOnVehicle>
+          </Item>
+          <Item>
+            <Id>Bicycle</Id>
+            <OverrideInverseMassScales value="true" />
+            <InverseMassScales>
+              <ApplyVehicleScale value="true" />
+              <VehicleScale value="1.0" />
+              <ApplyPedScale value="true" />
+              <PedScale value="1.2" />
+            </InverseMassScales>
+            <OverrideReactionType value="true" />
+            <ForceUnderVehicle value="true" />
+            <ForceOverVehicle value="false" />
+            <VehicleCentreZOffset value="0.0" />
+            <OverrideRootLiftForce value="true" />
+            <RootLiftForce>
+              <Apply value="false" />
+              <ScaleWithVelocity value="false" />
+              <MinVelThreshold value="0.0" />
+              <MaxVelThreshold value="100000.0" />
+              <MinVelMag value="0.0" />
+              <MaxVelMag value="100000.0" />
+              <ScaleWithUpright value="false" />
+              <ScaleWithMass value="false" />
+              <ReduceWithPedVelocity value="false" />
+              <ReduceWithPedAngularVelocity value="false" />
+              <OnlyInContact value="true" />
+              <OnlyNotInContact value="false" />
+              <ForceMag value="0.0" />
+              <MinMag value="0.0" />
+              <MaxMag value="120.0" />
+              <Duration value="200" />
+            </RootLiftForce>
+            <OverrideFlipForce value="true" />
+            <FlipForce>
+              <Apply value="false" />
+              <ScaleWithVelocity value="false" />
+              <MinVelThreshold value="0.0" />
+              <MaxVelThreshold value="100000.0" />
+              <MinVelMag value="0.0" />
+              <MaxVelMag value="100000.0" />
+              <ScaleWithUpright value="false" />
+              <ScaleWithMass value="false" />
+              <ReduceWithPedVelocity value="false" />
+              <ReduceWithPedAngularVelocity value="false" />
+              <OnlyInContact value="true" />
+              <OnlyNotInContact value="false" />
+              <ForceMag value="70.0" />
+              <MinMag value="0.0" />
+              <MaxMag value="4500.0" />
+              <Duration value="200" />
+            </FlipForce>
+            <OverrideInitialForce value="false" />
+            <InitialForce>
+              <VelocityMin value="0.0" />
+              <VelocityMax value="10.0" />
+              <ForceAtMinVelocity value="0.0" />
+              <ForceAtMaxVelocity value="10.0" />
+              <ScaleWithUpright value="true" />
+            </InitialForce>
+            <OverrideElasticity value="true" />
+            <VehicleCollisionElasticityMult value="0.01" />
+            <OverrideFriction value="true" />
+            <VehicleCollisionFrictionMult value="1.0" />
+            <LateralForce>
+              <Apply value="false" />
+              <ScaleWithVelocity value="false" />
+              <MinVelThreshold value="0.0" />
+              <MaxVelThreshold value="100000.0" />
+              <MinVelMag value="0.0" />
+              <MaxVelMag value="100000.0" />
+              <ScaleWithUpright value="false" />
+              <ScaleWithMass value="false" />
+              <ReduceWithPedVelocity value="false" />
+              <ReduceWithPedAngularVelocity value="false" />
+              <OnlyInContact value="true" />
+              <OnlyNotInContact value="false" />
+              <ForceMag value="1100.0" />
+              <MinMag value="0.0" />
+              <MaxMag value="4500.0" />
+              <Duration value="200" />
+            </LateralForce>
+            <OverrideStuckOnVehicleSets value="false" />
+            <AddToBaseStuckOnVehicleSets value="false" />
+            <StuckOnVehicle>
+              <InitialDelay value="500" />
+              <UnderVehicleInitialDelay value="500" />
+              <VelocityThreshold value="1.0" />
+              <ContinuousContactTime value="0.5" />
+              <UnderVehicleVelocityThreshold value="0.0" />
+              <UnderVehicleContinuousContactTime value="0.1" />
+              <UnderCarMaxVelocity value="1.0" />
+              <StuckOnVehicle>
+                <Id>StuckOnVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckOnVehicle>
+              <EndStuckOnVehicle>
+                <Id>EndStuckOnVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckOnVehicle>
+              <UpdateOnVehicle>
+                <Id>UpdateOnVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </UpdateOnVehicle>
+              <StuckUnderVehicle>
+                <Id>StuckUnderVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckUnderVehicle>
+              <EndStuckUnderVehicle>
+                <Id>EndStuckUnderVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckUnderVehicle>
+              <StuckOnVehiclePlayer>
+                <Id>StuckOnVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckOnVehiclePlayer>
+              <EndStuckOnVehiclePlayer>
+                <Id>EndStuckOnVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckOnVehiclePlayer>
+              <UpdateOnVehiclePlayer>
+                <Id>UpdateOnVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </UpdateOnVehiclePlayer>
+              <StuckUnderVehiclePlayer>
+                <Id>StuckUnderVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckUnderVehiclePlayer>
+              <EndStuckUnderVehiclePlayer>
+                <Id>EndStuckUnderVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckUnderVehiclePlayer>
+            </StuckOnVehicle>
+          </Item>
+          <Item>
+            <Id>BODHI</Id>
+            <OverrideInverseMassScales value="false" />
+            <InverseMassScales>
+              <ApplyVehicleScale value="false" />
+              <VehicleScale value="1.0" />
+              <ApplyPedScale value="false" />
+              <PedScale value="1.0" />
+            </InverseMassScales>
+            <OverrideReactionType value="true" />
+            <ForceUnderVehicle value="false" />
+            <ForceOverVehicle value="false" />
+            <VehicleCentreZOffset value="-0.46000000" />
+            <OverrideRootLiftForce value="false" />
+            <RootLiftForce>
+              <Apply value="false" />
+              <ScaleWithVelocity value="false" />
+              <MinVelThreshold value="0.0" />
+              <MaxVelThreshold value="100000.0" />
+              <MinVelMag value="0.0" />
+              <MaxVelMag value="100000.0" />
+              <ScaleWithUpright value="false" />
+              <ScaleWithMass value="false" />
+              <ReduceWithPedVelocity value="false" />
+              <ReduceWithPedAngularVelocity value="false" />
+              <OnlyInContact value="false" />
+              <OnlyNotInContact value="false" />
+              <ForceMag value="70.0" />
+              <MinMag value="0.0" />
+              <MaxMag value="4500.0" />
+              <Duration value="200" />
+            </RootLiftForce>
+            <OverrideFlipForce value="false" />
+            <FlipForce>
+              <Apply value="false" />
+              <ScaleWithVelocity value="false" />
+              <MinVelThreshold value="0.0" />
+              <MaxVelThreshold value="100000.0" />
+              <MinVelMag value="0.0" />
+              <MaxVelMag value="100000.0" />
+              <ScaleWithUpright value="false" />
+              <ScaleWithMass value="false" />
+              <ReduceWithPedVelocity value="false" />
+              <ReduceWithPedAngularVelocity value="false" />
+              <OnlyInContact value="false" />
+              <OnlyNotInContact value="false" />
+              <ForceMag value="70.0" />
+              <MinMag value="0.0" />
+              <MaxMag value="4500.0" />
+              <Duration value="200" />
+            </FlipForce>
+            <OverrideInitialForce value="false" />
+            <InitialForce>
+              <VelocityMin value="0.0" />
+              <VelocityMax value="10.0" />
+              <ForceAtMinVelocity value="0.0" />
+              <ForceAtMaxVelocity value="10.0" />
+              <ScaleWithUpright value="true" />
+            </InitialForce>
+            <OverrideElasticity value="false" />
+            <VehicleCollisionElasticityMult value="10.0" />
+            <OverrideFriction value="false" />
+            <VehicleCollisionFrictionMult value="0.25000000" />
+            <LateralForce>
+              <Apply value="false" />
+              <ScaleWithVelocity value="false" />
+              <MinVelThreshold value="0.0" />
+              <MaxVelThreshold value="100000.0" />
+              <MinVelMag value="0.0" />
+              <MaxVelMag value="100000.0" />
+              <ScaleWithUpright value="false" />
+              <ScaleWithMass value="false" />
+              <ReduceWithPedVelocity value="false" />
+              <ReduceWithPedAngularVelocity value="false" />
+              <OnlyInContact value="false" />
+              <OnlyNotInContact value="false" />
+              <ForceMag value="70.0" />
+              <MinMag value="0.0" />
+              <MaxMag value="4500.0" />
+              <Duration value="200" />
+            </LateralForce>
+            <OverrideStuckOnVehicleSets value="false" />
+            <AddToBaseStuckOnVehicleSets value="false" />
+            <StuckOnVehicle>
+              <InitialDelay value="500" />
+              <UnderVehicleInitialDelay value="500" />
+              <VelocityThreshold value="1.0" />
+              <ContinuousContactTime value="0.5" />
+              <UnderVehicleVelocityThreshold value="0.0" />
+              <UnderVehicleContinuousContactTime value="0.1" />
+              <UnderCarMaxVelocity value="1.0" />
+              <StuckOnVehicle>
+                <Id />
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckOnVehicle>
+              <EndStuckOnVehicle>
+                <Id />
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckOnVehicle>
+              <UpdateOnVehicle>
+                <Id />
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </UpdateOnVehicle>
+              <StuckUnderVehicle>
+                <Id />
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckUnderVehicle>
+              <EndStuckUnderVehicle>
+                <Id />
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckUnderVehicle>
+              <StuckOnVehiclePlayer>
+                <Id />
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckOnVehiclePlayer>
+              <EndStuckOnVehiclePlayer>
+                <Id />
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckOnVehiclePlayer>
+              <UpdateOnVehiclePlayer>
+                <Id />
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </UpdateOnVehiclePlayer>
+              <StuckUnderVehiclePlayer>
+                <Id />
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckUnderVehiclePlayer>
+              <EndStuckUnderVehiclePlayer>
+                <Id />
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckUnderVehiclePlayer>
+            </StuckOnVehicle>
+          </Item>
+          <Item>
+            <Id>TRUCK</Id>
+            <OverrideInverseMassScales value="true" />
+            <InverseMassScales>
+              <ApplyVehicleScale value="false" />
+              <VehicleScale value="1.2" />
+              <ApplyPedScale value="true" />
+              <PedScale value="0.25000000" />
+            </InverseMassScales>
+            <OverrideReactionType value="true" />
+            <ForceUnderVehicle value="false" />
+            <ForceOverVehicle value="false" />
+            <VehicleCentreZOffset value="0.0" />
+            <OverrideRootLiftForce value="true" />
+            <RootLiftForce>
+              <Apply value="false" />
+              <ScaleWithVelocity value="false" />
+              <MinVelThreshold value="0.0" />
+              <MaxVelThreshold value="100000.0" />
+              <MinVelMag value="0.0" />
+              <MaxVelMag value="100000.0" />
+              <ScaleWithUpright value="false" />
+              <ScaleWithMass value="false" />
+              <ReduceWithPedVelocity value="false" />
+              <ReduceWithPedAngularVelocity value="false" />
+              <OnlyInContact value="false" />
+              <OnlyNotInContact value="false" />
+              <ForceMag value="70.0" />
+              <MinMag value="0.0" />
+              <MaxMag value="4500.0" />
+              <Duration value="200" />
+            </RootLiftForce>
+            <OverrideFlipForce value="false" />
+            <FlipForce>
+              <Apply value="false" />
+              <ScaleWithVelocity value="false" />
+              <MinVelThreshold value="0.0" />
+              <MaxVelThreshold value="100000.0" />
+              <MinVelMag value="0.0" />
+              <MaxVelMag value="100000.0" />
+              <ScaleWithUpright value="false" />
+              <ScaleWithMass value="false" />
+              <ReduceWithPedVelocity value="false" />
+              <ReduceWithPedAngularVelocity value="false" />
+              <OnlyInContact value="false" />
+              <OnlyNotInContact value="false" />
+              <ForceMag value="70.0" />
+              <MinMag value="0.0" />
+              <MaxMag value="4500.0" />
+              <Duration value="200" />
+            </FlipForce>
+            <OverrideInitialForce value="false" />
+            <InitialForce>
+              <VelocityMin value="0.0" />
+              <VelocityMax value="10.0" />
+              <ForceAtMinVelocity value="0.0" />
+              <ForceAtMaxVelocity value="10.0" />
+              <ScaleWithUpright value="true" />
+            </InitialForce>
+            <OverrideElasticity value="true" />
+            <VehicleCollisionElasticityMult value="10.0" />
+            <OverrideFriction value="true" />
+            <VehicleCollisionFrictionMult value="0.3" />
+            <LateralForce>
+              <Apply value="false" />
+              <ScaleWithVelocity value="false" />
+              <MinVelThreshold value="0.0" />
+              <MaxVelThreshold value="100000.0" />
+              <MinVelMag value="0.0" />
+              <MaxVelMag value="100000.0" />
+              <ScaleWithUpright value="true" />
+              <ScaleWithMass value="false" />
+              <ReduceWithPedVelocity value="false" />
+              <ReduceWithPedAngularVelocity value="false" />
+              <OnlyInContact value="false" />
+              <OnlyNotInContact value="false" />
+              <ForceMag value="70.0" />
+              <MinMag value="0.0" />
+              <MaxMag value="4500.0" />
+              <Duration value="200" />
+            </LateralForce>
+            <OverrideStuckOnVehicleSets value="true" />
+            <AddToBaseStuckOnVehicleSets value="false" />
+            <StuckOnVehicle>
+              <InitialDelay value="500" />
+              <UnderVehicleInitialDelay value="500" />
+              <VelocityThreshold value="1.0" />
+              <ContinuousContactTime value="0.5" />
+              <UnderVehicleVelocityThreshold value="0.0" />
+              <UnderVehicleContinuousContactTime value="0.1" />
+              <UnderCarMaxVelocity value="1.0" />
+              <StuckOnVehicle>
+                <Id>StuckOnVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckOnVehicle>
+              <EndStuckOnVehicle>
+                <Id>EndStuckOnVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckOnVehicle>
+              <UpdateOnVehicle>
+                <Id>UpdateOnVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </UpdateOnVehicle>
+              <StuckUnderVehicle>
+                <Id>StuckUnderVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckUnderVehicle>
+              <EndStuckUnderVehicle>
+                <Id>EndStuckUnderVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckUnderVehicle>
+              <StuckOnVehiclePlayer>
+                <Id>StuckOnVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckOnVehiclePlayer>
+              <EndStuckOnVehiclePlayer>
+                <Id>EndStuckOnVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckOnVehiclePlayer>
+              <UpdateOnVehiclePlayer>
+                <Id>UpdateOnVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </UpdateOnVehiclePlayer>
+              <StuckUnderVehiclePlayer>
+                <Id>StuckUnderVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckUnderVehiclePlayer>
+              <EndStuckUnderVehiclePlayer>
+                <Id>EndStuckUnderVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckUnderVehiclePlayer>
+            </StuckOnVehicle>
+          </Item>
+          <Item>
+            <Id>PLANE</Id>
+            <OverrideInverseMassScales value="false" />
+            <InverseMassScales>
+              <ApplyVehicleScale value="false" />
+              <VehicleScale value="1.2" />
+              <ApplyPedScale value="true" />
+              <PedScale value="0.25000000" />
+            </InverseMassScales>
+            <OverrideReactionType value="true" />
+            <ForceUnderVehicle value="true" />
+            <ForceOverVehicle value="false" />
+            <VehicleCentreZOffset value="0.0" />
+            <OverrideRootLiftForce value="false" />
+            <RootLiftForce>
+              <Apply value="false" />
+              <ScaleWithVelocity value="false" />
+              <MinVelThreshold value="0.0" />
+              <MaxVelThreshold value="100000.0" />
+              <MinVelMag value="0.0" />
+              <MaxVelMag value="100000.0" />
+              <ScaleWithUpright value="false" />
+              <ScaleWithMass value="false" />
+              <ReduceWithPedVelocity value="false" />
+              <ReduceWithPedAngularVelocity value="false" />
+              <OnlyInContact value="false" />
+              <OnlyNotInContact value="false" />
+              <ForceMag value="70.0" />
+              <MinMag value="0.0" />
+              <MaxMag value="4500.0" />
+              <Duration value="200" />
+            </RootLiftForce>
+            <OverrideFlipForce value="false" />
+            <FlipForce>
+              <Apply value="false" />
+              <ScaleWithVelocity value="false" />
+              <MinVelThreshold value="0.0" />
+              <MaxVelThreshold value="100000.0" />
+              <MinVelMag value="0.0" />
+              <MaxVelMag value="100000.0" />
+              <ScaleWithUpright value="false" />
+              <ScaleWithMass value="false" />
+              <ReduceWithPedVelocity value="false" />
+              <ReduceWithPedAngularVelocity value="false" />
+              <OnlyInContact value="false" />
+              <OnlyNotInContact value="false" />
+              <ForceMag value="70.0" />
+              <MinMag value="0.0" />
+              <MaxMag value="4500.0" />
+              <Duration value="200" />
+            </FlipForce>
+            <OverrideInitialForce value="false" />
+            <InitialForce>
+              <VelocityMin value="0.0" />
+              <VelocityMax value="10.0" />
+              <ForceAtMinVelocity value="0.0" />
+              <ForceAtMaxVelocity value="10.0" />
+              <ScaleWithUpright value="true" />
+            </InitialForce>
+            <OverrideElasticity value="false" />
+            <VehicleCollisionElasticityMult value="10.0" />
+            <OverrideFriction value="false" />
+            <VehicleCollisionFrictionMult value="0.3" />
+            <LateralForce>
+              <Apply value="false" />
+              <ScaleWithVelocity value="false" />
+              <MinVelThreshold value="0.0" />
+              <MaxVelThreshold value="100000.0" />
+              <MinVelMag value="0.0" />
+              <MaxVelMag value="100000.0" />
+              <ScaleWithUpright value="true" />
+              <ScaleWithMass value="false" />
+              <ReduceWithPedVelocity value="false" />
+              <ReduceWithPedAngularVelocity value="false" />
+              <OnlyInContact value="false" />
+              <OnlyNotInContact value="false" />
+              <ForceMag value="70.0" />
+              <MinMag value="0.0" />
+              <MaxMag value="4500.0" />
+              <Duration value="200" />
+            </LateralForce>
+            <OverrideStuckOnVehicleSets value="false" />
+            <AddToBaseStuckOnVehicleSets value="false" />
+            <StuckOnVehicle>
+              <InitialDelay value="500" />
+              <UnderVehicleInitialDelay value="500" />
+              <VelocityThreshold value="1.0" />
+              <ContinuousContactTime value="0.5" />
+              <UnderVehicleVelocityThreshold value="0.0" />
+              <UnderVehicleContinuousContactTime value="0.1" />
+              <UnderCarMaxVelocity value="1.0" />
+              <StuckOnVehicle>
+                <Id>StuckOnVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckOnVehicle>
+              <EndStuckOnVehicle>
+                <Id>EndStuckOnVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckOnVehicle>
+              <UpdateOnVehicle>
+                <Id>UpdateOnVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </UpdateOnVehicle>
+              <StuckUnderVehicle>
+                <Id>StuckUnderVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckUnderVehicle>
+              <EndStuckUnderVehicle>
+                <Id>EndStuckUnderVehicle</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckUnderVehicle>
+              <StuckOnVehiclePlayer>
+                <Id>StuckOnVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckOnVehiclePlayer>
+              <EndStuckOnVehiclePlayer>
+                <Id>EndStuckOnVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckOnVehiclePlayer>
+              <UpdateOnVehiclePlayer>
+                <Id>UpdateOnVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </UpdateOnVehiclePlayer>
+              <StuckUnderVehiclePlayer>
+                <Id>StuckUnderVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </StuckUnderVehiclePlayer>
+              <EndStuckUnderVehiclePlayer>
+                <Id>EndStuckUnderVehiclePlayer</Id>
+                <Priority value="0" />
+                <Enabled value="true" />
+                <Messages />
+              </EndStuckUnderVehiclePlayer>
+            </StuckOnVehicle>
+          </Item>
+        </sets>
+      </VehicleOverrides>
+      <InverseMassScales>
+        <ApplyVehicleScale value="false" />
+        <VehicleScale value="1.2" />
+        <ApplyPedScale value="true" />
+        <PedScale value="0.16000000" />
+      </InverseMassScales>
+      <AngularVelocityLimits>
+        <Apply value="true" />
+        <Constant x="0.02" y="0.02" z="0.02" />
+        <Velocity x="0.08000000" y="0.08000000" z="0.08000000" />
+        <Velocity2 x="0.15" y="0.15" z="0.15" />
+        <Max value="18.0" />
+        <Delay value="0" />
+      </AngularVelocityLimits>
+      <InitialForce>
+        <VelocityMin value="0.0" />
+        <VelocityMax value="5.0" />
+        <ForceAtMinVelocity value="4000.0" />
+        <ForceAtMaxVelocity value="4000.0" />
+        <ScaleWithUpright value="true" />
+      </InitialForce>
+      <ChestForce>
+        <Apply value="false" />
+        <ScaleWithVelocity value="false" />
+        <MinVelThreshold value="0.0" />
+        <MaxVelThreshold value="100000.0" />
+        <MinVelMag value="0.0" />
+        <MaxVelMag value="100000.0" />
+        <ScaleWithUpright value="false" />
+        <ScaleWithMass value="false" />
+        <ReduceWithPedVelocity value="false" />
+        <ReduceWithPedAngularVelocity value="false" />
+        <OnlyInContact value="true" />
+        <OnlyNotInContact value="false" />
+        <ForceMag value="4000.0" />
+        <MinMag value="0.0" />
+        <MaxMag value="300.0" />
+        <Duration value="200" />
+      </ChestForce>
+      <FeetLiftForce>
+        <Apply value="false" />
+        <ScaleWithVelocity value="true" />
+        <MinVelThreshold value="0.0" />
+        <MaxVelThreshold value="100000.0" />
+        <MinVelMag value="0.0" />
+        <MaxVelMag value="100000.0" />
+        <ScaleWithUpright value="false" />
+        <ScaleWithMass value="true" />
+        <ReduceWithPedVelocity value="false" />
+        <ReduceWithPedAngularVelocity value="false" />
+        <OnlyInContact value="true" />
+        <OnlyNotInContact value="false" />
+        <ForceMag value="0.02" />
+        <MinMag value="0.0" />
+        <MaxMag value="100.0" />
+        <Duration value="100" />
+      </FeetLiftForce>
+      <RootLiftForce>
+        <Apply value="false" />
+        <ScaleWithVelocity value="true" />
+        <MinVelThreshold value="0.0" />
+        <MaxVelThreshold value="100000.0" />
+        <MinVelMag value="0.0" />
+        <MaxVelMag value="100000.0" />
+        <ScaleWithUpright value="true" />
+        <ScaleWithMass value="false" />
+        <ReduceWithPedVelocity value="false" />
+        <ReduceWithPedAngularVelocity value="true" />
+        <OnlyInContact value="true" />
+        <OnlyNotInContact value="false" />
+        <ForceMag value="50.0" />
+        <MinMag value="10.0" />
+        <MaxMag value="50.0" />
+        <Duration value="200" />
+      </RootLiftForce>
+      <FlipForce>
+        <Apply value="true" />
+        <ScaleWithVelocity value="true" />
+        <MinVelThreshold value="0.0" />
+        <MaxVelThreshold value="100000.0" />
+        <MinVelMag value="0.0" />
+        <MaxVelMag value="100000.0" />
+        <ScaleWithUpright value="false" />
+        <ScaleWithMass value="true" />
+        <ReduceWithPedVelocity value="false" />
+        <ReduceWithPedAngularVelocity value="false" />
+        <OnlyInContact value="true" />
+        <OnlyNotInContact value="false" />
+        <ForceMag value="0.25200000" />
+        <MinMag value="10.0" />
+        <MaxMag value="90.0" />
+        <Duration value="100" />
+      </FlipForce>
+      <CapsuleHitForce>
+        <Apply value="true" />
+        <ScaleWithVelocity value="false" />
+        <MinVelThreshold value="0.0" />
+        <MaxVelThreshold value="100000.0" />
+        <MinVelMag value="0.0" />
+        <MaxVelMag value="100000.0" />
+        <ScaleWithUpright value="false" />
+        <ScaleWithMass value="false" />
+        <ReduceWithPedVelocity value="false" />
+        <ReduceWithPedAngularVelocity value="false" />
+        <OnlyInContact value="false" />
+        <OnlyNotInContact value="true" />
+        <ForceMag value="3000.0" />
+        <MinMag value="0.0" />
+        <MaxMag value="4500.0" />
+        <Duration value="200" />
+      </CapsuleHitForce>
+      <SideSwipeForce>
+        <Apply value="true" />
+        <ScaleWithVelocity value="false" />
+        <MinVelThreshold value="0.0" />
+        <MaxVelThreshold value="100000.0" />
+        <MinVelMag value="0.0" />
+        <MaxVelMag value="100000.0" />
+        <ScaleWithUpright value="false" />
+        <ScaleWithMass value="false" />
+        <ReduceWithPedVelocity value="false" />
+        <ReduceWithPedAngularVelocity value="false" />
+        <OnlyInContact value="false" />
+        <OnlyNotInContact value="false" />
+        <ForceMag value="3000.0" />
+        <MinMag value="0.0" />
+        <MaxMag value="4500.0" />
+        <Duration value="150" />
+      </SideSwipeForce>
+      <ForceUnderVehicle value="false" />
+      <ForceOverVehicle value="true" />
+      <ChestForcePitch value="1.0" />
+      <AllowWarningActivations value="false" />
+      <LowVelocityReactionThreshold value="1.0" />
+      <FallingSpeedForHighFall value="5.0" />
+      <VehicleCollisionElasticityMult value="10.0" />
+      <VehicleCollisionFrictionMult value="1.0" />
+      <VehicleCollisionNormalPitchOverVehicle value="0.0" />
+      <VehicleCollisionNormalPitchUnderVehicle value="-0.3" />
+      <AiClearedVehicleDelay value="100" />
+      <AiClearedVehicleSmartFallDelay value="900" />
+      <PlayerClearedVehicleDelay value="100" />
+      <PlayerClearedVehicleSmartFallDelay value="300" />
+      <Start>
+        <Id>Brace_Start</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Start>
+      <OnStairs>
+        <Id>Brace_OnStairs</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnStairs>
+      <Weak>
+        <Id>Brace_Weak</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Weak>
+      <OnBalanceFailed>
+        <Id>Brace_OnBalanceFailed</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnBalanceFailed>
+      <OnBalanceFailedStairs>
+        <Id>Brace_OnBalanceFailedStairs</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnBalanceFailedStairs>
+      <HighVelocity>
+        <Id>Brace_HighVelocity</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </HighVelocity>
+      <StuckUnderVehicleMaxUpright value="0.6" />
+      <StuckOnVehicle>
+        <InitialDelay value="800" />
+        <UnderVehicleInitialDelay value="500" />
+        <VelocityThreshold value="0.5" />
+        <ContinuousContactTime value="0.5" />
+        <UnderVehicleVelocityThreshold value="0.0" />
+        <UnderVehicleContinuousContactTime value="0.1" />
+        <UnderCarMaxVelocity value="3.0" />
+        <StuckOnVehicle>
+          <Id>Brace_StuckOnVehicle</Id>
+          <Priority value="5" />
+          <Enabled value="true" />
+          <Messages />
+        </StuckOnVehicle>
+        <EndStuckOnVehicle>
+          <Id>EndStuckOnVehicle</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </EndStuckOnVehicle>
+        <UpdateOnVehicle>
+          <Id>UpdateOnVehicle</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </UpdateOnVehicle>
+        <StuckUnderVehicle>
+          <Id>StuckUnderVehicle</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </StuckUnderVehicle>
+        <EndStuckUnderVehicle>
+          <Id>EndStuckUnderVehicle</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </EndStuckUnderVehicle>
+        <StuckOnVehiclePlayer>
+          <Id>StuckOnVehiclePlayer</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </StuckOnVehiclePlayer>
+        <EndStuckOnVehiclePlayer>
+          <Id>EndStuckOnVehiclePlayer</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </EndStuckOnVehiclePlayer>
+        <UpdateOnVehiclePlayer>
+          <Id>UpdateOnVehiclePlayer</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </UpdateOnVehiclePlayer>
+        <StuckUnderVehiclePlayer>
+          <Id>StuckUnderVehiclePlayer</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </StuckUnderVehiclePlayer>
+        <EndStuckUnderVehiclePlayer>
+          <Id>EndStuckUnderVehiclePlayer</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </EndStuckUnderVehiclePlayer>
+      </StuckOnVehicle>
+      <Update>
+        <Id>Brace_Update</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Update>
+      <Dead>
+        <Id>Brace_Dead</Id>
+        <Priority value="10" />
+        <Enabled value="true" />
+        <Messages />
+      </Dead>
+      <OverVehicle>
+        <Id>OverVehicle</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OverVehicle>
+      <UnderVehicle>
+        <Id>UnderVehicle</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </UnderVehicle>
+      <ClearedVehicle>
+        <Id>ClearedVehicle</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </ClearedVehicle>
+      <HighVelocityBlendOut>
+        <Ai>
+          <MaxLinearVelocity value="0.500000" />
+          <MaxAngularVelocity value="1.000000" />
+          <SettledTimeMS value="950" />
+          <RandomiseSettledTime value="true" />
+          <SettledTimeMinMS value="400" />
+        </Ai>
+        <Player>
+          <MaxLinearVelocity value="0.700000" />
+          <MaxAngularVelocity value="1.200000" />
+          <SettledTimeMS value="1100" />
+          <RandomiseSettledTime value="true" />
+          <SettledTimeMinMS value="1000" />
+        </Player>
+        <PlayerMp>
+          <MaxLinearVelocity value="0.900000" />
+          <MaxAngularVelocity value="1.300000" />
+          <SettledTimeMS value="500" />
+          <RandomiseSettledTime value="true" />
+          <SettledTimeMinMS value="200" />
+        </PlayerMp>
+      </HighVelocityBlendOut>
+    </Item>
+    <Item type="CTaskNMBuoyancy__Tunables">
+      <Name>CTaskNMBuoyancy</Name>
+      <BlendOutThreshold>
+        <MaxLinearVelocity value="0.2" />
+        <MaxAngularVelocity value="1.0" />
+        <SettledTimeMS value="100" />
+        <RandomiseSettledTime value="false" />
+        <SettledTimeMinMS value="50" />
+      </BlendOutThreshold>
+    </Item>
+    <Item type="CTaskNMDraggingToSafety__Tunables">
+      <Name>CTaskNMDraggingToSafety</Name>
+      <Stiffness>
+        <Relaxation value="0.0" />
+        <HeadAndNeck value="0.8" />
+        <AnkleAndWrist value="0.8" />
+      </Stiffness>
+      <DraggerArmIk>
+        <Enabled value="true" />
+        <LeftBoneOffset x="0.2" y="-0.15" z="0.0" />
+        <RightBoneOffset x="0.2" y="-0.15" z="0.0" />
+      </DraggerArmIk>
+      <Constraints>
+        <MaxDistance value="0.07" />
+      </Constraints>
+      <Forces>
+        <Enabled value="false" />
+        <LeftHandOffset x="0.0" y="0.0" z="0.0" />
+        <RightHandOffset x="0.0" y="0.0" z="0.0" />
+      </Forces>
+    </Item>
+    <Item type="CTaskNMDrunk__Tunables">
+      <Name>CTaskNMDrunk</Name>
+      <fMinHeadingDeltaToFixTurn value="2.3561" />
+      <fHeadingRandomizationRange value="0.4" />
+      <iHeadingRandomizationTimeMin value="300" />
+      <iHeadingRandomizationTimeMax value="1000" />
+      <fForceLeanInDirectionAmountMin value="0.0" />
+      <fForceLeanInDirectionAmountMax value="0.0" />
+      <fForceRampMinSpeed value="0.0" />
+      <fForceRampMaxSpeed value="1.5" />
+      <fHeadLookHeadingRandomizationRange value="0.75" />
+      <fHeadLookPitchRandomizationRange value="0.5" />
+      <iHeadLookRandomizationTimeMin value="3000" />
+      <iHeadlookRandomizationTimeMax value="10000" />
+      <fMinHeadingDeltaToIdleTurn value="0.5235" />
+      <iRunningTimeForVelocityBasedStayupright value="6000" />
+      <fStayUprightForceNonVelocityBased value="4.0" />
+      <fStayUprightForceMoving value="6.0" />
+      <fStayUprightForceIdle value="3.0" />
+      <fFallingSpeedForHighFall value="4.0" />
+      <bUseStayUpright value="true" />
+      <bDrawIdleHeadLookTarget value="false" />
+      <Start>
+        <Id>Drunk_Start</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Start>
+      <Base>
+        <Id>Drunk_Base</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Base>
+      <Moving>
+        <Id>Drunk_Moving</Id>
+        <Priority value="2" />
+        <Enabled value="true" />
+        <Messages />
+      </Moving>
+      <Idle>
+        <Id>Drunk_Idle</Id>
+        <Priority value="2" />
+        <Enabled value="true" />
+        <Messages />
+      </Idle>
+    </Item>
+    <Item type="CTaskNMElectrocute__Tunables">
+      <Name>CTaskNMElectrocute</Name>
+      <InitialForceComponent>RAGDOLL_SPINE2</InitialForceComponent>
+      <InitialForce>
+        <Enable value="true" />
+        <Mag value="5000.0" />
+        <ScaleWithVelocity value="true" />
+        <VelocityMin value="0.5" />
+        <VelocityMax value="7.0" />
+        <ForceAtMinVelocity value="0.5" />
+        <ForceAtMaxVelocity value="1.0" />
+        <ClampImpulse value="true" />
+        <MinImpulse value="0.0" />
+        <MaxImpulse value="4500.0" />
+        <Delay value="0" />
+        <Duration value="150" />
+        <ScaleWithUpright value="true" />
+      </InitialForce>
+      <InitialForceOffset x="0.0" y="0.0" z="0.0" />
+      <FallingSpeedForHighFall value="4.0" />
+      <Start>
+        <Id>start</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Start>
+      <Walking>
+        <Id>Walking</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Walking>
+      <Running>
+        <Id>Running</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Running>
+      <Sprinting>
+        <Id>Sprinting</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Sprinting>
+      <OnBalanceFailed>
+        <Id>OnBalanceFailed</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnBalanceFailed>
+      <OnCatchFallSuccess>
+        <Id>OnCatchFallSuccess</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnCatchFallSuccess>
+      <OnElectrocuteFinished>
+        <Id>OnElectrocuteFinished</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnElectrocuteFinished>
+    </Item>
+    <Item type="CTaskNMExplosion__Tunables">
+      <Name>CTaskNMExplosion</Name>
+      <MinStunnedTime value="5000" />
+      <MaxStunnedTime value="10000" />
+      <AllowPlayerStunned value="false" />
+      <UseRelaxBehaviour value="false" />
+      <RollUpHeightThreshold value="5.0" />
+      <CatchFallHeightThresholdRollUp value="3.0" />
+      <CatchFallHeightThresholdWindmill value="1.0" />
+      <CatchFallHeightThresholdClipPose value="10.0" />
+      <TimeToStartCatchFall value="2000" />
+      <TimeToStartCatchFallPlayer value="500" />
+      <DoCatchFallRelax value="false" />
+      <CatchFallRelaxHeight value="0.4" />
+      <HeightToStartWrithe value="1.0" />
+      <MinTimeForInitialState value="500" />
+      <MaxTimeForInitialState value="501" />
+      <MinWritheTime value="1000" />
+      <MaxWritheTime value="3000" />
+      <ForceRollUp value="true" />
+      <ForceWindmill value="false" />
+      <StartWindmill>
+        <Id>StartWindmill</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </StartWindmill>
+      <StartCatchFall>
+        <Id>StartCatchFall</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </StartCatchFall>
+      <StartRollDownStairs>
+        <Id>StartRollDownStairs</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </StartRollDownStairs>
+      <Update>
+        <Id>Update</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Update>
+      <Explosion>
+        <NMBodyScale value="7.65300000" />
+        <HumanBodyScale value="7.0" />
+        <HumanPelvisScale value="4.0" />
+        <HumanSpine0Scale value="0.8" />
+        <HumanSpine1Scale value="0.6" />
+        <AnimalBodyScale value="1.5" />
+        <AnimalPelvisScale value="0.5" />
+        <StrongBlastMagnitude value="70.0" />
+        <FastMovingPedSpeed value="3.0" />
+        <MaxDistanceAbovePedPositionToClampPitch value="1.5" />
+        <PitchClampMin value="20.0" />
+        <PitchClampMax value="60.0" />
+        <MagnitudeClamp value="100.0" />
+        <SideScale value="2.2" />
+        <PitchSideAngle value="72.54240000" />
+        <PitchTorqueMin value="6.0" />
+        <PitchTorqueMax value="11.0" />
+        <BlanketForceScale value="0.1" />
+        <ExtraTorqueTwistMax value="0.0" />
+        <DisableInjuredBehaviorImpulseLimit value="105.0" />
+        <DisableInjuredBehaviorDistLimit value="2.0" />
+      </Explosion>
+    </Item>
+    <Item type="CTaskNMFlinch__Tunables">
+      <Name>CTaskNMFlinch</Name>
+      <Start>
+        <Id>start</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Start>
+      <Passive>
+        <Id>Passive</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Passive>
+      <WaterCannon>
+        <Id>WaterCannon</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </WaterCannon>
+      <Armoured>
+        <Id>Armoured</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Armoured>
+      <OnStairs>
+        <Id>OnStairs</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnStairs>
+      <BoundAnkles>
+        <Id>BoundAnkles</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </BoundAnkles>
+      <FatallyInjured>
+        <Id>FatallyInjured</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </FatallyInjured>
+      <PlayerDeath>
+        <Id>PlayerDeath</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </PlayerDeath>
+      <HoldingTwoHandedWeapon>
+        <Id>HoldingTwoHandedWeapon</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </HoldingTwoHandedWeapon>
+      <HoldingSingleHandedWeapon>
+        <Id>HoldingSingleHandedWeapon</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </HoldingSingleHandedWeapon>
+      <Update>
+        <Id>Update</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Update>
+      <OnBalanceFailed>
+        <Id>OnBalanceFailed</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnBalanceFailed>
+      <OnBalanceFailedStairs>
+        <Id>OnBalanceFailedStairs</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnBalanceFailedStairs>
+      <WeaponSets>
+        <sets />
+      </WeaponSets>
+      <ActionSets>
+        <sets>
+          <Item key="BAT_FRONT">
+            <Id>BAT_FRONT</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="BAT_SMASH">
+            <Id>BAT_SMASH</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="HAMMER_FACE">
+            <Id>HAMMER_FACE</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="HAMMER_TOWN">
+            <Id>HAMMER_TOWN</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="KICK_STANDING">
+            <Id>KICK_STANDING</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="Knife">
+            <Id>Knife</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="KNIFE_SLASH">
+            <Id>KNIFE_SLASH</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="PRONE_BOOSTER_SHOT">
+            <Id>PRONE_BOOSTER_SHOT</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+        </sets>
+      </ActionSets>
+      <RandomiseLeadingHand value="true" />
+      <MinLeanInDirectionTime value="0.3" />
+      <MaxLeanInDirectionTime value="1.0" />
+      <fImpulseReductionScaleMax value="0.0" />
+      <fSpecialAbilityRageKickImpulseModifier value="1.25" />
+      <fCounterImpulseScale value="1.0" />
+    </Item>
+    <Item type="CTaskNMHighFall__Tunables">
+      <Name>CTaskNMHighFall</Name>
+      <PitchInDirectionForce>
+        <Enable value="false" />
+        <Mag value="800.0" />
+        <ScaleWithVelocity value="true" />
+        <VelocityMin value="0.0" />
+        <VelocityMax value="4.0" />
+        <ForceAtMinVelocity value="0.5" />
+        <ForceAtMaxVelocity value="1.0" />
+        <ClampImpulse value="true" />
+        <MinImpulse value="0.0" />
+        <MaxImpulse value="4500.0" />
+        <Delay value="0" />
+        <Duration value="300" />
+        <ScaleWithUpright value="true" />
+      </PitchInDirectionForce>
+      <PitchInDirectionComponent value="10" />
+      <StuntJumpPitchInDirectionForce>
+        <Enable value="true" />
+        <Mag value="1000.0" />
+        <ScaleWithVelocity value="true" />
+        <VelocityMin value="0.0" />
+        <VelocityMax value="4.0" />
+        <ForceAtMinVelocity value="0.5" />
+        <ForceAtMaxVelocity value="1.0" />
+        <ClampImpulse value="true" />
+        <MinImpulse value="0.0" />
+        <MaxImpulse value="4500.0" />
+        <Delay value="0" />
+        <Duration value="300" />
+        <ScaleWithUpright value="true" />
+      </StuntJumpPitchInDirectionForce>
+      <StuntJumpPitchInDirectionComponent value="10" />
+      <HighFallTimeToBlockInjuredOnGround value="3500" />
+      <Start>
+        <Id>HighFall_Start</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Start>
+      <StuntJump>
+        <Id>StuntJump</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </StuntJump>
+      <InAir>
+        <Id>InAir</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </InAir>
+      <Vault>
+        <Id>Vault</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Vault>
+      <FromCarHit>
+        <Id>FromCarHit</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </FromCarHit>
+      <SlopeSlide>
+        <Id>SlopeSlide</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </SlopeSlide>
+      <TeeterEdge>
+        <Id>TeeterEdge</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </TeeterEdge>
+      <SprintExhausted>
+        <Id>SprintExhausted</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </SprintExhausted>
+      <JumpCollision>
+        <Id>JumpCollision</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </JumpCollision>
+      <OnBalanceFailedSprintExhausted>
+        <Id>OnBalanceFailedSprintExhausted</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Message />
+      </OnBalanceFailedSprintExhausted>
+      <DisableStartMessageForSprintExhausted value="true" />
+      <Update>
+        <Id>HighFall_Update</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Update>
+      <BlendOut>
+        <Ai>
+          <MaxLinearVelocity value="0.5" />
+          <MaxAngularVelocity value="1.0" />
+          <SettledTimeMS value="1000" />
+          <RandomiseSettledTime value="false" />
+          <SettledTimeMinMS value="400" />
+        </Ai>
+        <Player>
+          <MaxLinearVelocity value="0.7" />
+          <MaxAngularVelocity value="1.2" />
+          <SettledTimeMS value="1000" />
+          <RandomiseSettledTime value="false" />
+          <SettledTimeMinMS value="350" />
+        </Player>
+        <PlayerMp>
+          <MaxLinearVelocity value="0.9" />
+          <MaxAngularVelocity value="1.3" />
+          <SettledTimeMS value="0" />
+          <RandomiseSettledTime value="false" />
+          <SettledTimeMinMS value="200" />
+        </PlayerMp>
+      </BlendOut>
+      <PlayerQuickBlendOut>
+        <MaxLinearVelocity value="1.0" />
+        <MaxAngularVelocity value="1.3" />
+        <SettledTimeMS value="1000" />
+        <RandomiseSettledTime value="false" />
+        <SettledTimeMinMS value="50" />
+      </PlayerQuickBlendOut>
+      <MpPlayerQuickBlendOut>
+        <MaxLinearVelocity value="1.0" />
+        <MaxAngularVelocity value="1.3" />
+        <SettledTimeMS value="1000" />
+        <RandomiseSettledTime value="false" />
+        <SettledTimeMinMS value="50" />
+      </MpPlayerQuickBlendOut>
+      <MaxHealthLossForQuickGetup value="100.0" />
+      <MinHealthForQuickGetup value="100.0" />
+      <MpMaxHealthLossForQuickGetup value="10.0" />
+      <MpMinHealthForQuickGetup value="100.0" />
+      <UseRemainingMinTimeForGroundWrithe value="true" />
+      <MinTimeRemainingForGroundWrithe value="500" />
+      <MinTimeElapsedForGroundWrithe value="1200" />
+      <HighHighFallStart>
+        <Id>HighHighFallStart</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </HighHighFallStart>
+      <SuperHighFallStart>
+        <Id>SuperHighFallStart</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </SuperHighFallStart>
+      <HighHighFallEnd>
+        <Id>HighHighFallEnd</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </HighHighFallEnd>
+      <AirResistanceOption value="2" />
+      <DistanceZThresholdForHighHighFall value="5.0" />
+      <VelocityZThresholdForHighHighFall value="-6.0" />
+      <VelocityZThresholdForSuperHighFall value="-15.0" />
+      <RagdollComponentAirResistanceForce content="float_array">         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0 		0.0       </RagdollComponentAirResistanceForce>
+      <RagdollComponentAirResistanceMinStiffness content="float_array">         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0       </RagdollComponentAirResistanceMinStiffness>
+    </Item>
+    <Item type="CTaskNMInjuredOnGround__Tunables">
+      <Name>CTaskNMInjuredOnGround</Name>
+      <fDoInjuredOnGroundChance value="1.0" />
+      <fFallingSpeedThreshold value="0.0" />
+      <iRandomDurationMin value="5000" />
+      <iRandomDurationMax value="7000" />
+      <iMaxNumInjuredOnGroundAgents value="5" />
+      <Start>
+        <Id />
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Start>
+      <Update>
+        <Id />
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Update>
+    </Item>
+    <Item type="CTaskNMJumpRollFromRoadVehicle__Tunables">
+      <Name>CTaskNMJumpRollFromRoadVehicle</Name>
+      <GravityScale value="0.0" />
+      <StartForceDownHeight value="0.0" />
+      <Start>
+        <Id>start</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Start>
+      <EntryPointSets>
+        <sets>
+          <Item key="Bicycle">
+            <Id>Bicycle</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="LOWCAR">
+            <Id>LOWCAR</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="MOTOBIKE">
+            <Id>MOTOBIKE</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="SLOWTRUCK">
+            <Id>SLOWTRUCK</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="STANDARD">
+            <Id>STANDARD</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+        </sets>
+      </EntryPointSets>
+      <BlendOut>
+        <Ai>
+          <MaxLinearVelocity value="2.0" />
+          <MaxAngularVelocity value="2.0" />
+          <SettledTimeMS value="2000" />
+          <RandomiseSettledTime value="false" />
+          <SettledTimeMinMS value="2000" />
+        </Ai>
+        <Player>
+          <MaxLinearVelocity value="2.0" />
+          <MaxAngularVelocity value="2.0" />
+          <SettledTimeMS value="2000" />
+          <RandomiseSettledTime value="false" />
+          <SettledTimeMinMS value="2000" />
+        </Player>
+        <PlayerMp>
+          <MaxLinearVelocity value="2.0" />
+          <MaxAngularVelocity value="2.0" />
+          <SettledTimeMS value="2000" />
+          <RandomiseSettledTime value="false" />
+          <SettledTimeMinMS value="2000" />
+        </PlayerMp>
+      </BlendOut>
+      <PlayerQuickBlendOut>
+        <MaxLinearVelocity value="2.0" />
+        <MaxAngularVelocity value="2.0" />
+        <SettledTimeMS value="2000" />
+        <RandomiseSettledTime value="false" />
+        <SettledTimeMinMS value="2000" />
+      </PlayerQuickBlendOut>
+      <MpPlayerQuickBlendOut>
+        <MaxLinearVelocity value="2.0" />
+        <MaxAngularVelocity value="2.0" />
+        <SettledTimeMS value="2000" />
+        <RandomiseSettledTime value="false" />
+        <SettledTimeMinMS value="2000" />
+      </MpPlayerQuickBlendOut>
+    </Item>
+    <Item type="CTaskNMOnFire__Tunables">
+      <Name>CTaskNMOnFire</Name>
+      <Start>
+        <Id>start</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Start>
+      <Weak>
+        <Id>Weak</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Weak>
+      <Update>
+        <Id>Update</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Update>
+      <OnBalanceFailed>
+        <Id>OnBalanceFailed</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnBalanceFailed>
+    </Item>
+    <Item type="CTaskNMPrototype__Tunables">
+      <Name>CTaskNMPrototype</Name>
+      <RunForever value="true" />
+      <SimulationTimeInMs value="4000" />
+      <CheckForMovingGround value="true" />
+      <Start>
+        <Id>Prototype_Start</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Start>
+      <Update>
+        <Id>Prototype_Update</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Update>
+      <OnBalanceFailed>
+        <Id>Prototype_OnBalanceFailed</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </OnBalanceFailed>
+      <TimedMessages>
+        <Item>
+          <TimeInSeconds value="5.0" />
+          <Periodic value="false" />
+          <Messages>
+            <Id>Prototype_Timed1</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Messages>
+        </Item>
+        <Item>
+          <TimeInSeconds value="5.0" />
+          <Periodic value="false" />
+          <Messages>
+            <Id>Prototype_Timed2</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Messages>
+        </Item>
+        <Item>
+          <TimeInSeconds value="5.0" />
+          <Periodic value="false" />
+          <Messages>
+            <Id>Prototype_Timed3</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Messages>
+        </Item>
+      </TimedMessages>
+      <DynamicSet1>
+        <Id>DynamicSet1</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </DynamicSet1>
+      <DynamicSet2>
+        <Id>DynamicSet2</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </DynamicSet2>
+      <DynamicSet3>
+        <Id>DynamicSet3</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </DynamicSet3>
+    </Item>
+    <Item type="CTaskNMRiverRapids__Tunables">
+      <Name>CTaskNMRiverRapids</Name>
+      <fMinRiverFlowForRapids value="3.25000000" />
+      <fMinRiverGroundClearanceForRapids value="0.8" />
+      <bHorizontalRighting value="true" />
+      <fHorizontalRightingStrength value="2.5" />
+      <fHorizontalRightingTime value="2.0" />
+      <bVerticalRighting value="true" />
+      <fVerticalRightingStrength value="6.0" />
+      <fVerticalRightingTime value="2.0" />
+      <fRagdollComponentBuoyancy content="float_array">         0.6         0.3         0.2         0.1         0.3         0.2         0.1         0.6         0.7         0.8         1.0         0.9         0.7         0.4         0.2         0.9         0.7         0.4         0.2         1.0         1.0       </fRagdollComponentBuoyancy>
+      <BodyWrithe>
+        <bControlledByPlayerSprintInput value="true" />
+        <fMinArmAmplitude value="0.8" />
+        <fMaxArmAmplitude value="2.5" />
+        <fMinArmStiffness value="9.0" />
+        <fMaxArmStiffness value="14.0" />
+        <fMinArmPeriod value="1.5" />
+        <fMaxArmPeriod value="1.5" />
+        <fMinStroke value="0.0" />
+        <fMaxStroke value="1.0" />
+        <fMinBuoyancy value="1.0" />
+        <fMaxBuoyancy value="1.1" />
+      </BodyWrithe>
+      <Start>
+        <Id>start</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Start>
+      <Update>
+        <Id>Update</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Update>
+    </Item>
+    <Item type="CTaskNMShot__Tunables">
+      <Name>CTaskNMShot</Name>
+      <MinimumShotReactionTimePlayerMS value="0" />
+      <MinimumShotReactionTimeAIMS value="0" />
+      <bUseClipPoseHelper value="false" />
+      <bEnableDebugDraw value="false" />
+      <fImpactConeAngleFront value="45.0" />
+      <fImpactConeAngleBack value="45.0" />
+      <eImpactConeRagdollComponent>RAGDOLL_SPINE0</eImpactConeRagdollComponent>
+      <iShotMinTimeBeforeGunThreaten value="0" />
+      <iShotMaxTimeBeforeGunThreaten value="500" />
+      <iShotMinTimeBetweenFireGun value="100" />
+      <iShotMaxTimeBetweenFireGun value="500" />
+      <iShotMaxBlindFireTimeL value="400" />
+      <iShotMaxBlindFireTimeH value="1000" />
+      <BlendOutDelayStanding value="50" />
+      <BlendOutDelayBalanceFailed value="200" />
+      <fShotBlindFireProbability value="0.3" />
+      <fShotWeaponAngleToFireGun value="0.9" />
+      <fShotHeadAngleToFireGun value="0.2" />
+      <fFireWeaponStrengthForceMultiplier value="1.0" />
+      <fMinFinisherShotgunTotalImpulseNormal value="50.0" />
+      <fMinFinisherShotgunTotalImpulseBraced value="50.0" />
+      <fFinisherShotgunBonusArmedSpeedModifier value="1.5" />
+      <ScaleSnapWithSpineOrientation value="true" />
+      <MinSnap value="0.3" />
+      <ShotAgainstWall>
+        <HealthRatioLimit value="100.0" />
+        <WallProbeRadius value="0.2" />
+        <WallProbeDistance value="0.6" />
+        <ProbeHeightAbovePelvis value="0.1" />
+        <ImpulseMult value="1.3" />
+        <MaxWallAngle value="180.0" />
+      </ShotAgainstWall>
+      <BCRExclusionZone value="0.2" />
+      <Impulses>
+        <MaxArmourImpulseMult value="1.2" />
+        <MinArmourImpulseMult value="1.2" />
+        <MaxHealthImpulseMult value="1.1" />
+        <MinHealthImpulseMult value="1.4" />
+        <MaxDamageTakenImpulseMult value="1.0" />
+        <MinDamageTakenImpulseMult value="1.0" />
+        <MaxDamageTakenThreshold value="100.0" />
+        <MinDamageTakenThreshold value="0.0" />
+        <DefaultKillShotImpulseMult value="1.7" />
+        <DefaultRapidFireKillShotImpulseMult value="1.25" />
+        <DefaultMPKillShotImpulseMult value="1.6" />
+        <DefaultMPRapidFireKillShotImpulseMult value="1.45" />
+        <ShotgunMaxSpeedForLiftImpulse value="5.0" />
+        <ShotgunMaxLiftImpulse value="14.0" />
+        <ShotgunLiftNearThreshold value="60.0" />
+        <ShotgunChanceToMoveSpine3ImpulseToSpine2 value="0.8" />
+        <ShotgunChanceToMoveNeckImpulseToSpine2 value="0.8" />
+        <ShotgunChanceToMoveHeadImpulseToSpine2 value="0.2" />
+        <RapidFireBoostShotImpulseMult value="1.0" />
+        <RapidFireBoostShotMinRandom value="3" />
+        <RapidFireBoostShotMaxRandom value="3" />
+        <EqualizeAmount value="0.0" />
+        <COMImpulseScale value="0.0" />
+        <COMImpulseComponent>RAGDOLL_SPINE0</COMImpulseComponent>
+        <COMImpulseMaxRootVelocityMagnitude value="100.0" />
+        <COMImpulseOnlyWhileBalancing value="true" />
+        <HeadShotImpulseMultiplier value="1.2" />
+        <HeadShotMPImpulseMultiplier value="1.2" />
+        <ScaleHeadShotImpulseWithSpineOrientation value="true" />
+        <MinHeadShotImpulseMultiplier value="0.25" />
+        <AutomaticInitialSnapMult value="0.0" />
+        <BurstFireInitialSnapMult value="0.0" />
+        <FinalShotImpulseClampMax value="40.0" />
+        <RunningAgainstBulletImpulseMult value="2.0" />
+        <RunningAgainstBulletImpulseMultMax value="2.0" />
+        <RunningWithBulletImpulseMult value="0.3" />
+        <LegShotFallRootImpulseMinUpright value="0.6" />
+        <LegShotFallRootImpulseMult value="0.375" />
+        <SniperImpulses>
+          <MaxHealthImpulseMult value="1.0" />
+          <MinHealthImpulseMult value="1.0" />
+          <MaxDamageTakenImpulseMult value="1.0" />
+          <MinDamageTakenImpulseMult value="1.0" />
+          <MaxDamageTakenThreshold value="100.0" />
+          <MinDamageTakenThreshold value="0.0" />
+          <DefaultKillShotImpulseMult value="1.15" />
+          <DefaultMPKillShotImpulseMult value="1.15" />
+        </SniperImpulses>
+      </Impulses>
+      <HitRandomisation>
+        <Enable value="true" />
+        <TopSpread value="0.5" />
+        <BottomSpread value="0.2" />
+        <Blend value="0.85" />
+        <TopComponent>RAGDOLL_SPINE3</TopComponent>
+        <BottomComponent>RAGDOLL_SPINE3</BottomComponent>
+        <BiasSide value="1.0" />
+        <BiasSideTime value="0" />
+      </HitRandomisation>
+      <HitRandomisationAutomatic>
+        <Enable value="true" />
+        <TopSpread value="0.3" />
+        <BottomSpread value="0.4" />
+        <Blend value="0.87" />
+        <TopComponent>RAGDOLL_SPINE3</TopComponent>
+        <BottomComponent>RAGDOLL_SPINE1</BottomComponent>
+        <BiasSide value="0.6" />
+        <BiasSideTime value="1000" />
+      </HitRandomisationAutomatic>
+      <StayUpright>
+        <HoldingWeaponBonus value="0.0" />
+        <UnarmedBonus value="0.0" />
+        <ArmouredBonus value="0.0" />
+        <MovingMultiplierBonus value="0.0" />
+        <HealthMultiplierBonus value="0.0" />
+        <TurnTowardsBullets value="true" />
+      </StayUpright>
+      <ArmShot>
+        <MinLookAtArmWoundTime value="250" />
+        <MaxLookAtArmWoundTime value="350" />
+        <UpperArmImpulseCap value="50.0" />
+        <LowerArmImpulseCap value="10.0" />
+        <ClavicleImpulseScale value="0.7" />
+        <UpperArmNoTorsoHitImpulseCap value="50.0" />
+        <LowerArmNoTorseHitImpulseCap value="25.0" />
+      </ArmShot>
+      <FallingSpeedForHighFall value="64.0" />
+      <ReduceDownedTimeByPerformanceTime value="false" />
+      <MinimumDownedTime value="5000" />
+      <ChanceOfFallToKneesOnCollapse value="0.0" />
+      <ChanceOfFallToKneesAfterLastStand value="0.0" />
+      <ChanceForGutShotKnockdown value="0.0" />
+      <LastStandMaxTotalTime value="0.4" />
+      <LastStandMaxArmouredTotalTime value="0.4" />
+      <RapidHitCount value="-1" />
+      <ArmouredRapidHitCount value="-1" />
+      <AllowArmouredLegShot value="false" />
+      <AllowArmouredKnockdown value="false" />
+      <DisableReachForWoundOnHeadShot value="true" />
+      <DisableReachForWoundOnHeadShotMinDelay value="250" />
+      <DisableReachForWoundOnHeadShotMaxDelay value="300" />
+      <DisableReachForWoundOnNeckShot value="false" />
+      <DisableReachForWoundOnNeckShotMinDelay value="0" />
+      <DisableReachForWoundOnNeckShotMaxDelay value="0" />
+      <ParamSets>
+        <Base>
+          <Id>Shot_Base</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </Base>
+        <Melee>
+          <Id>Shot_Melee</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </Melee>
+        <Electrocute>
+          <Id>Shot_Electrocute</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </Electrocute>
+        <SprintingLegShot>
+          <Id>Shot_SprintingLegShot</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </SprintingLegShot>
+        <SprintingDeath>
+          <Id>SprintingDeath</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </SprintingDeath>
+        <Sprinting>
+          <Id>Shot_Sprinting</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </Sprinting>
+        <AutomaticHeadShot>
+          <Id>Shot_AutomaticHeadShot</Id>
+          <Priority value="11" />
+          <Enabled value="true" />
+          <Messages />
+        </AutomaticHeadShot>
+        <HeadShot>
+          <Id>Shot_HeadShot</Id>
+          <Priority value="10" />
+          <Enabled value="true" />
+          <Messages />
+        </HeadShot>
+        <AutomaticNeckShot>
+          <Id>AutomaticNeckShot</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </AutomaticNeckShot>
+        <NeckShot>
+          <Id>NeckShot</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </NeckShot>
+        <SniperLegShot>
+          <Id>Shot_LegShot</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </SniperLegShot>
+        <LegShot>
+          <Id>Shot_LegShot</Id>
+          <Priority value="10" />
+          <Enabled value="true" />
+          <Messages />
+        </LegShot>
+        <ArmShot>
+          <Id>Shot_ArmShot</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </ArmShot>
+        <BackShot>
+          <Id>BackShot</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </BackShot>
+        <Underwater>
+          <Id>Shot_Underwater</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </Underwater>
+        <UnderwaterRelax>
+          <Id>UnderwaterRelax</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </UnderwaterRelax>
+        <Armoured>
+          <Id>Shot_Armoured</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </Armoured>
+        <BoundAnkles>
+          <Id>Shot_BoundAnkles</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </BoundAnkles>
+        <FatallyInjured>
+          <Id>Shot_FatallyInjured</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </FatallyInjured>
+        <PlayerDeathSP>
+          <Id>PlayerDeathSP</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </PlayerDeathSP>
+        <PlayerDeathMP>
+          <Id>PlayerDeathMP</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </PlayerDeathMP>
+        <OnStairs>
+          <Id>OnStairs</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </OnStairs>
+        <ShotAgainstWall>
+          <Id>Shot_AgainstWall</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </ShotAgainstWall>
+        <LastStand>
+          <Id>Shot_LastStand</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </LastStand>
+        <LastStandArmoured>
+          <Id>Shot_LastStandArmoured</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </LastStandArmoured>
+        <LastStandFinished>
+          <Id>Shot_LastStandFinished</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </LastStandFinished>
+        <HeadLook>
+          <Id>Shot_HeadLook</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </HeadLook>
+        <FallToKnees>
+          <Id>Shot_FallToKnees</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </FallToKnees>
+        <StaggerFall>
+          <Id>Shot_StaggerFall</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </StaggerFall>
+        <CatchFall>
+          <Id>Shot_CatchFall</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </CatchFall>
+        <SetFallingReactionHealthy>
+          <Id>Shot_SetFallingReactionHealthy</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </SetFallingReactionHealthy>
+        <SetFallingReactionInjured>
+          <Id>Shot_SetFallingReactionInjured</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </SetFallingReactionInjured>
+        <SetFallingReactionFallOverWall>
+          <Id>SetFallingReactionFallOverWall</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </SetFallingReactionFallOverWall>
+        <SetFallingReactionFallOverVehicle>
+          <Id>SetFallingReactionFallOverVehicle</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </SetFallingReactionFallOverVehicle>
+        <RubberBulletKnockdown>
+          <Id>Shot_RubberBulletKnockdown</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </RubberBulletKnockdown>
+        <Teeter>
+          <Id>Teeter</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </Teeter>
+        <HoldingTwoHandedWeapon>
+          <Id>HoldingTwoHandedWeapon</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </HoldingTwoHandedWeapon>
+        <HoldingSingleHandedWeapon>
+          <Id>HoldingSingleHandedWeapon</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </HoldingSingleHandedWeapon>
+        <CrouchedOrLowCover>
+          <Id>CrouchedOrLowCover</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </CrouchedOrLowCover>
+        <Female>
+          <Id>Female</Id>
+          <Priority value="0" />
+          <Enabled value="true" />
+          <Messages />
+        </Female>
+      </ParamSets>
+      <WeaponSets>
+        <sets>
+          <Item key="Automatic">
+            <Id>Automatic</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="AutomaticMG">
+            <Id>AutomaticMG</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="AutomaticSMG">
+            <Id>AutomaticSMG</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="Normal">
+            <Id>Normal</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="BurstFire">
+            <Id>BurstFire</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="Mini">
+            <Id>Mini</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="Pistol">
+            <Id>Pistol</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="Shotgun">
+            <Id>Shotgun</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="Revolver">
+            <Id>Revolver</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+          <Item key="Sniper">
+            <Id>Sniper</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Item>
+        </sets>
+      </WeaponSets>
+      <BlendOutThreshold>
+        <Ai>
+          <MaxLinearVelocity value="0.6" />
+          <MaxAngularVelocity value="1.0" />
+          <SettledTimeMS value="200" />
+          <RandomiseSettledTime value="false" />
+          <SettledTimeMinMS value="50" />
+        </Ai>
+        <Player>
+          <MaxLinearVelocity value="1.1" />
+          <MaxAngularVelocity value="2.0" />
+          <SettledTimeMS value="50" />
+          <RandomiseSettledTime value="false" />
+          <SettledTimeMinMS value="50" />
+        </Player>
+        <PlayerMp>
+          <MaxLinearVelocity value="0.8" />
+          <MaxAngularVelocity value="1.2" />
+          <SettledTimeMS value="125" />
+          <RandomiseSettledTime value="false" />
+          <SettledTimeMinMS value="50" />
+        </PlayerMp>
+      </BlendOutThreshold>
+      <SubmergedBlendOutThreshold>
+        <MaxLinearVelocity value="0.8" />
+        <MaxAngularVelocity value="1.5" />
+        <SettledTimeMS value="50" />
+        <RandomiseSettledTime value="false" />
+        <SettledTimeMinMS value="50" />
+      </SubmergedBlendOutThreshold>
+    </Item>
+    <Item type="CTaskNMSimple__Tunables">
+      <Name>CTaskNMSimple</Name>
+      <Tuning>
+        <Item key="Death_SmokeGrenade">
+          <iMinTime value="3000" />
+          <iMaxTime value="10000" />
+          <fRagdollScore value="-1.0" />
+          <Start>
+            <Id />
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Start>
+          <Update>
+            <Id />
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Update>
+          <OnBalanceFailure>
+            <Id />
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </OnBalanceFailure>
+        </Item>
+        <Item key="Death_Tranquilizer">
+          <iMinTime value="3000" />
+          <iMaxTime value="10000" />
+          <fRagdollScore value="-1.0" />
+          <Start>
+            <Id />
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Start>
+          <Update>
+            <Id />
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Update>
+          <OnBalanceFailure>
+            <Id />
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </OnBalanceFailure>
+        </Item>
+        <Item key="HighFall_TimeoutGroundWrithe">
+          <iMinTime value="2000" />
+          <iMaxTime value="10000" />
+          <fRagdollScore value="-1.0" />
+          <Start>
+            <Id>start</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Start>
+          <Update>
+            <Id>Update</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </Update>
+          <OnBalanceFailure>
+            <Id>OnBalanceFailure</Id>
+            <Priority value="0" />
+            <Enabled value="true" />
+            <Messages />
+          </OnBalanceFailure>
+        </Item>
+      </Tuning>
+    </Item>
+    <Item type="CTaskNMThroughWindscreen__Tunables">
+      <Name>CTaskNMThroughWindscreen</Name>
+      <GravityScale value="0.0" />
+      <StartForceDownHeight value="100.0" />
+      <KnockOffBikeForwardMinComponent value="0.1" />
+      <KnockOffBikeForwardMaxComponent value="0.1" />
+      <KnockOffBikeUpMinComponent value="0.05" />
+      <KnockOffBikeUpMaxComponent value="0.05" />
+      <KnockOffBikePitchMinComponent value="10.0" />
+      <KnockOffBikePitchMaxComponent value="10.0" />
+      <KnockOffBikeMinSpeed value="10.0" />
+      <KnockOffBikeMaxSpeed value="30.0" />
+      <KnockOffBikeMinUpright value="0.2" />
+      <KnockOffBikeMaxUpright value="0.8" />
+      <KnockOffBikeEjectMaxImpactDepth value="0.2" />
+      <KnockOffBikeEjectImpactFriction value="0.5" />
+      <ClearVehicleTimeMS value="250" />
+      <DefaultInverseMassScales>
+        <ApplyVehicleScale value="true" />
+        <VehicleScale value="0.0" />
+        <ApplyPedScale value="true" />
+        <PedScale value="0.0" />
+      </DefaultInverseMassScales>
+      <BicycleInverseMassScales>
+        <ApplyVehicleScale value="true" />
+        <VehicleScale value="0.0" />
+        <ApplyPedScale value="true" />
+        <PedScale value="0.0" />
+      </BicycleInverseMassScales>
+      <BikeInverseMassScales>
+        <ApplyVehicleScale value="true" />
+        <VehicleScale value="0.0" />
+        <ApplyPedScale value="true" />
+        <PedScale value="0.0" />
+      </BikeInverseMassScales>
+      <Start>
+        <Id>ThroughWindscreen_Start</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Start>
+      <Update>
+        <Id>ThroughWindscreen_Update</Id>
+        <Priority value="0" />
+        <Enabled value="true" />
+        <Messages />
+      </Update>
+    </Item>
+    <Item type="CTaskRageRagdoll__Tunables">
+      <Name>CTaskRageRagdoll</Name>
+      <SpineStrengthTuning>
+        <fInitialDelay value="0.1" />
+        <fStartStrength value="0.0" />
+        <fMidStrength value="300.0" />
+        <fEndStrength value="0.0" />
+        <fDurationStage1 value="1.0" />
+        <fDurationStage2 value="3.0" />
+      </SpineStrengthTuning>
+      <NeckStrengthTuning>
+        <fInitialDelay value="0.1" />
+        <fStartStrength value="0.0" />
+        <fMidStrength value="300.0" />
+        <fEndStrength value="0.0" />
+        <fDurationStage1 value="0.3" />
+        <fDurationStage2 value="4.0" />
+      </NeckStrengthTuning>
+      <LimbStrengthTuning>
+        <fInitialDelay value="0.0" />
+        <fStartStrength value="0.0" />
+        <fMidStrength value="300.0" />
+        <fEndStrength value="0.0" />
+        <fDurationStage1 value="2.0" />
+        <fDurationStage2 value="2.0" />
+      </LimbStrengthTuning>
+      <RageRagdollImpulseTuning>
+        <fImpulseReductionPerShot value="0.2" />
+        <fImpulseRecoveryPerSecond value="1.0" />
+        <fMaxImpulseModifier value="1.0" />
+        <fMinImpulseModifier value="0.5" />
+        <fCounterImpulseRatio value="0.5" />
+        <fTempInitialStiffnessWhenShot value="0.1" />
+        <fAnimalMassMult value="0.07" />
+        <fAnimalImpulseMultMin value="0.5" />
+        <fAnimalImpulseMultMax value="2.0" />
+        <fInitialHitImpulseMult value="2.0" />
+      </RageRagdollImpulseTuning>
+      <fMuscleAngleStrengthRampDownRate value="250.0" />
+      <fMuscleSpeedStrengthRampDownRate value="25.0" />
+    </Item>
+  </Tunables>
+</CTuningFile>
